@@ -1,0 +1,10 @@
+# i18n_es.messages
+
+authenticated.Managers.form.title.create = Hazte Managers
+authenticated.Managers.form.title.update = Actualiza tus datos de Managers
+authenticated.Managers.form.label.company = Compañía
+authenticated.Managers.form.label.sector = Sector
+
+authenticated.Managers.form.button.create = Registrar
+authenticated.Managers.form.button.update = Actualizar
+authenticated.Managers.form.button.return = Volver

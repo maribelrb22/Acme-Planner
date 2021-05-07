@@ -1,0 +1,26 @@
+***************
+*** 179,187 ****
+  		<dependency>
+  			<groupId>mysql</groupId>
+  			<artifactId>mysql-connector-java</artifactId>
+- 			<scope>runtime</scope>
+  		</dependency>
+  		
+  		<!-- Testing -->
+  
+  		<dependency>
+--- 179,192 ----
+  		<dependency>
+  			<groupId>mysql</groupId>
+  			<artifactId>mysql-connector-java</artifactId>
++ 			<!-- <scope>runtime</scope> -->
+  		</dependency>
+  		
++ 		<dependency>
++ 	    	<groupId>com.zaxxer</groupId>
++ 	        <artifactId>HikariCP</artifactId>	        
++ 	    </dependency>
++ 	    
+  		<!-- Testing -->
+  
+  		<dependency>

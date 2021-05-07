@@ -1,0 +1,15 @@
+# i18n_en.messages
+
+anonymous.task.list.label.title = Title
+anonymous.task.list.label.workload = Workload
+anonymous.task.list.label.executionPeriod = Execution Period
+
+anonymous.task.form.label.title = Title
+anonymous.task.form.label.begin = Start date
+anonymous.task.form.label.end = End date
+anonymous.task.form.label.description = Description
+anonymous.task.form.label.link = Link
+anonymous.task.form.label.workload = Workload
+anonymous.task.form.label.executionPeriod = Execution Period
+
+anonymous.task.form.button.return = Return

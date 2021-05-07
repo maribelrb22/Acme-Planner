@@ -1,0 +1,7 @@
+administrator.threshold.form.label.threshold = Umbral (%)
+administrator.threshold.form.button.reset = Reiniciar
+administrator.threshold.form.button.update.show = Actualizar umbral
+administrator.threshold.form.button.return = Volver
+administrator.threshold.form.button.update = Guardar cambios
+
+administrator.threshold.form.error.exceded = El umbral debe estar entre 0% y 100%

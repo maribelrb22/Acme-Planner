@@ -1,0 +1,8 @@
+administrator.word.list.label.word = Spam word
+administrator.word.form.button.create = Add word
+administrator.word.form.button.return = Return
+administrator.word.form.label.word = Word
+administrator.word.form.threshold = Manage threshold
+administrator.word.form.error.exists = This word is already a spam word
+administrator.word.form.button.delete = Delete
+administrator.word.form.button.update = Update

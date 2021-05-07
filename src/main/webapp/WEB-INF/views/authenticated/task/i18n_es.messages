@@ -1,0 +1,14 @@
+master.menu.authenticated.tasks = Tareas
+
+authenticated.task.list.label.title = Título
+authenticated.task.list.label.workload = Carga de Trabajo
+authenticated.task.list.label.executionPeriod = Periodo de extensión
+
+authenticated.task.form.label.title = Título
+authenticated.task.form.label.begin = Inicio
+authenticated.task.form.label.end = Fin
+authenticated.task.form.label.workload = Carga de Trabajo
+authenticated.task.form.label.link = Link
+authenticated.task.form.label.description = Descripción
+authenticated.task.form.label.executionPeriod = Periodo de extensión
+authenticated.task.form.button.return = Volver

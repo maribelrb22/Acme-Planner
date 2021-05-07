@@ -1,0 +1,7 @@
+administrator.threshold.form.label.threshold = Threshold (%)
+administrator.threshold.form.button.reset = Reset
+administrator.threshold.form.button.update.show = Update threshold
+administrator.threshold.form.button.return = Return
+administrator.threshold.form.button.update = Save changes
+
+administrator.threshold.form.error.exceded = The threshold must be between 0% and 100%

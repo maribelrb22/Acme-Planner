@@ -1,0 +1,47 @@
+# i18n_en.messages
+Managers.workplan.list.label.isPublic = Is the workplan public?
+Managers.workplan.list.label.tasks = Tasks
+Managers.workplan.list.label.begin = Start date
+Managers.workplan.list.label.end = End date
+Managers.workplan.list.label.id = Workplan's id
+Managers.workplan.list.label.Managers = Managers
+Managers.workplan.list.label.title = Title
+Managers.workplan.list.label.workload= Workload
+Managers.workplan.list.label.executionPeriod = Execution time
+Managers.workplan.form.label.isPublic = Is it public?
+Managers.workplan.form.label.begin = Start date
+Managers.workplan.form.label.begin.recommend= Recommended start date:  
+Managers.workplan.form.label.end = End date
+Managers.workplan.form.label.end.recommend= Recommended end date:  
+Managers.workplan.form.label.workload = Workload
+Managers.workplan.form.button.return = Return
+Managers.workplan.form.label.id = Workplan id
+Managers.workplan.form.button.create = Create
+Managers.workplan.form.label.tasks.title= Title
+Managers.workplan.form.label.tasks.id= Id
+Managers.workplan.form.label.tasks= Workplan tasks
+Managers.workplan.form.button.delete= Delete
+Managers.workplan.form.label.tasks.public = Privacy
+Managers.workplan.form.label.tasks.public.true= Public
+Managers.workplan.form.label.tasks.public.false= Private
+Managers.workplan.form.button.publish = Publish
+Managers.workplan.form.label.title= Title
+Managers.workplan.form.label.executionPeriod= Execution time
+Managers.workplan.form.button.update = Update
+Managers.workplan.form.label.isPublic.true = Public
+Managers.workplan.form.label.isPublic.false = Private
+Managers.workplan.form.button.addTask= Add task
+Managers.workplan.form.select.addTask = Available tasks to add
+Managers.workplan.form.button.removeTask= X
+Managers.workplan.form.button.privatize= Privatize
+
+
+Managers.workplan.form.error.must-be-before-end = Begin must be before end
+Managers.workplan.form.error.must-be-in-future = The date must be in future
+Managers.workplan.form.error.must-be-after-begin= The date must be after begin
+Managers.workplan.form.error.spam = Your text is considered spam, please, use a proper vocabulary
+Managers.workplan.form.error.all-tasks-must-be-public= To publish a workplan all tasks must be public
+
+Managers.workplan.form.addTask.error.task = Task should not be null
+Managers.workplan.form.addTask.error.public = Public workplans only can have public tasks
+Managers.workplan.form.addTask.error.executionPeriod = A work plan has an execution period that must be long enough to position all the tasks

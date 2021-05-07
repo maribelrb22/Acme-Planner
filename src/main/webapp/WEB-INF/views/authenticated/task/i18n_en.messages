@@ -1,0 +1,15 @@
+master.menu.authenticated.tasks = Tasks
+
+authenticated.task.list.label.title = Title
+authenticated.task.list.label.workload = Workload
+authenticated.task.list.label.executionPeriod = Execution Period
+
+authenticated.task.form.label.title = Title
+authenticated.task.form.label.begin = Begin
+authenticated.task.form.label.end = End
+authenticated.task.form.label.workload = Workload
+authenticated.task.form.label.link = Link
+authenticated.task.form.label.description = Description
+authenticated.task.form.label.executionPeriod = Execution Period
+authenticated.task.form.button.return = Return
+

@@ -1,0 +1,19 @@
+# i18n_en.messages
+
+administrator.workplan.dashboard.form.title.show = Dashboard
+administrator.workplan.dashboard.form.title.general-indicators = General indicators
+administrator.workplan.dashboard.form.label.total-number-public-workplan =  Total number of public workplans
+administrator.workplan.dashboard.form.label.total-number-private-workplan = Total number of private workplans
+administrator.workplan.dashboard.form.label.total-number-finished-workplan = Total number of finished workplans
+administrator.workplan.dashboard.form.label.total-number-non-finished-workplan = Total number of non finished workplans
+administrator.workplan.dashboard.form.label.average-periods = Average of execution periods
+administrator.workplan.dashboard.form.label.deviation-periods = Deviation of execution periods
+administrator.workplan.dashboard.form.label.minimum-periods = Minimum number of workplans period
+administrator.workplan.dashboard.form.label.maximum-periods = Maximum number of workplans period
+administrator.workplan.dashboard.form.label.average-workloads = Average of workloads
+administrator.workplan.dashboard.form.label.deviation-workplan = Deviation of workloads
+administrator.workplan.dashboard.form.label.minimum-number-workloads = Minimum number of workloads
+administrator.workplan.dashboard.form.label.maximum-number-workloads = Maximum number of workloads
+administrator.workplan.dashboard.form.label.hours = hours
+
+administrator.workplan.dashboard.form.title.application-statuses = Application statuses

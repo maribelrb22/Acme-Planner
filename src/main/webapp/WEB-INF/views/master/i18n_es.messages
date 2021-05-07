@@ -1,0 +1,128 @@
+# i18n_es.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+# master.banner.welcome #######################################################
+
+master.banner.background = #B498EB
+
+﻿# master.welcome ##############################################################
+
+master.welcome.title = ¡Bienvenidos!
+master.welcome.text = \
+	Bienvenidos a Acme Planner! Tu primer proyecto en Diseño y Pruebas.
+
+# master.menu #################################################################
+
+master.menu.home = Inicio
+master.menu.sign-up = Registrarse
+master.menu.sign-in = Entrar
+master.menu.sign-out = Salir
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anónimo
+master.menu.anonymous.list-shout = Lista de gritos
+master.menu.anonymous.create-shout = Crear gritos
+master.menu.anonymous.list-task = Lista de tareas
+master.menu.anonymous.list-workplan = Lista de planes de trabajo
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrador
+master.menu.administrator.task-dashboard = Panel de indicadores de las tareas
+master.menu.administrator.dashboard-workplans = Panel de indicadores de los planes de trabajo
+master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.populate-initial = Poblar BD (inicial)
+master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.spam.word.list = Lista de palabras spam
+master.menu.administrator.spam.word.add = Añadir una palabra spam
+
+# master.menu.provider ########################################################
+
+master.menu.provider = Proveedor
+
+# master.menu.consumer ##########################################################
+
+master.menu.consumer = Consumidor
+
+# master.menu.Managers ##########################################################
+
+master.menu.Managers= Managers
+master.menu.Managers.workplan.list = Lista de planes de trabajo
+master.menu.Managers.task.list = Lista de tareas
+master.menu.Managers.task.create = Crear Tarea
+master.menu.Managers.workplan.create = Crear plan de trabajo
+
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.tasks= Tareas
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Cuenta
+master.menu.user-account.general-data = Datos generales
+master.menu.user-account.provider = Datos de proveedor
+master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.consumer = Datos de consumidor
+master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.become-Managers = Hazte Managers
+master.menu.user-account.Managers = Datos del Managers
+
+﻿# master.footer ###############################################################
+
+master.footer.title.about = Nosotros
+master.footer.label.company = La empresa
+master.footer.label.license = Licencia
+master.footer.title.social = Social
+master.footer.label.linked-in = Linked-In
+master.footer.label.twitter = Twitter
+master.footer.title.languages = Lenguajes
+master.footer.label.english = Inglés
+master.footer.label.spanish = Español
+
+# master.company ##############################################################
+
+master.company.title = dp2-2021-g1-01
+master.company.text = \
+	Acme-Planner G1-01, Inc. es una compañía ficticia que proporciona un proyecto \
+	plantilla para los estudiantes de la asignatura Diseño y Pruebas, en el Grado \
+	en Ingeniería del Software de la Universidad de Sevilla.
+master.company.name = Acme-Planner G1-01, Inc.
+master.company.address = Calle Romeo de Julieta, 15, Sevilla, Sevilla, España
+master.company.phone = +34 639 654 355
+master.company.email = g101projects@acme.com
+
+# master.license ##############################################################
+
+master.license.title = Licencia
+master.license.text = \
+	Puede usar este sistema de forma completamente gratuita respetando las leyes \
+	que sean aplicables.  No compartimos ninguna información sobre Ud. con ninguna \
+	otra empresa.  Tan sólo usamos tres cookies, a saber: "JSESSIONID" para identificar \
+	su sesión de trabajo, "remember" para mantener su información de autentificación \
+	durante un máximo de 31 días y "language" para almacenar sus preferencias de \
+	lenguage.  Además, almacenamos un ítem llamado "returnStack" en el almacenamiento \
+	local de su navegador para saber dónde tienen que ir algunos botones.
+
+# master.panic ################################################################
+
+master.panic.title = Error inesperado
+master.panic.text = \
+	¡Lo sentimos! Se ha producido un error inesperado.  Si impide que pueda \
+	trabajar con nuestro sistema, por favor, póngase en contacto con nosotros \
+	y haremos lo posible por resolverlo cuanto antes.
+	the following information to them.
+master.panic.label.request = Petición:
+master.panic.label.status = Estado:
+master.panic.label.exceptions = Excepciones:
+master.panic.text.consult-log = Por favor, consulte el log para ver más detalles.
+

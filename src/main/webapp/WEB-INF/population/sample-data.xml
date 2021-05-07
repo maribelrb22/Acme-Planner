@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+- sample-data.xml
+-
+- Copyright (C) 2012-2021 Rafael Corchuelo.
+-
+- In keeping with the traditional purpose of furthering education and research, it is
+- the policy of the copyright owner to permit non-commercial use and redistribution of
+- this software. It has been tested carefully, but it is not guaranteed for any particular
+- purposes.  The copyright owner does not offer any warranties or representations, nor do
+- they accept any liabilities with respect to them.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="classpath:/WEB-INF/population/conversion-service.xml" />
+
+	<!-- Shouts -->
+	<bean id="shout01" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/03/18 20:00" />
+		<property name="author" value="Mary Doe" />
+		<property name="text" value="I'm tired" />
+		<property name="info">
+			<null />
+		</property>
+	</bean>
+
+	<bean id="shout02" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/08/20 17:15" />
+		<property name="author" value="Patrick Start" />
+		<property name="text" value="I'm happy" />
+		<property name="info" value="http://www.example.com" />
+	</bean>
+
+	<bean id="shout03" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/08/20 17:15" />
+		<property name="author" value="Ian Somerhalder" />
+		<property name="text" value="Just turning 42!" />
+		<property name="info">
+			<null />
+		</property>
+	</bean>
+
+	<bean id="shout04" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2018/05/09 10:37" />
+		<property name="author" value="Peter Parker" />
+		<property name="text" value="I'm Spiderman!" />
+		<property name="info" value="http://www.example.com" />
+	</bean>
+
+	<bean id="shout05" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/09/12 11:20" />
+		<property name="author" value="Squidward Po" />
+		<property name="text" value="I'm angry" />
+		<property name="info" value="https://www.youtube.com/watch?v=Gx4qSjcKNcA" />
+	</bean>
+
+	<bean id="shout06" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/12/29 10:25"/>
+		<property name="author" value="Frank Cyrus"/>
+		<property name="text" value="Bored!"/>
+		<property name="info"> <null/></property>
+	</bean>
+
+	<bean id="shout07" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/01/01 10:37" />
+		<property name="author" value="Javier Decuca" />
+		<property name="text" value="I'm Hacker!" />
+		<property name="info" value="https://twitter.com" />
+	</bean>
+
+	<!-- Task -->
+	<bean id="task01" class="acme.entities.tasks.Task">
+		<property name="title" value="task1" />
+		<property name="begin" value="2010/05/12 10:00" />
+		<property name="end" value="2010/10/13 10:10"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss.
+		The tasks can be either public or private." />
+		<property name="link" value="http://www.example.com" />
+		<property name="isPublic" value="true" />
+		<property name="workload" value="20.0" />
+		<property name="executionPeriod" value="3782.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+	<bean id="task02" class="acme.entities.tasks.Task">
+		<property name="title" value="task2" />
+		<property name="begin" value="2020/10/12 10:00" />
+		<property name="end" value="2020/10/13 10:10"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss.
+		The tasks can be either public or private." />
+		<property name="link" value="http://www.example.com" />
+		<property name="isPublic" value="false" />
+		<property name="workload" value="30.0" />
+		<property name="executionPeriod" value="110.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+	<bean id="task03" class="acme.entities.tasks.Task">
+		<property name="title" value="task3" />
+		<property name="begin" value="2022/02/13 10:00" />
+		<property name="end" value="2022/03/13 23:59"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="link" value="http://www.example.com" />
+		<property name="isPublic" value="true" />
+		<property name="workload" value="5.30" />
+		<property name="executionPeriod" value="686.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+	<bean id="task04" class="acme.entities.tasks.Task">
+		<property name="title" value="task4" />
+		<property name="begin" value="2022/06/09 09:00" />
+		<property name="end" value="2022/06/09 10:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="link" value="http://www.example.com" />
+		<property name="isPublic" value="true" />
+		<property name="workload" value="6.0" />
+		<property name="executionPeriod" value="759.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+	<bean id="task05" class="acme.entities.tasks.Task">
+		<property name="title" value="task5" />
+		<property name="begin" value="2024/10/14 09:00" />
+		<property name="end" value="2024/10/14 10:10" />
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="link" value="http://www.example.com" />
+		<property name="isPublic" value="false" />
+		<property name="workload" value="10.15" />
+		<property name="executionPeriod" value="63.0" />
+		<property name="Managers" ref="Managers2Managers" />
+	</bean>
+	<bean id="task06" class="acme.entities.tasks.Task">
+		<property name="title" value="task6" />
+		<property name="begin" value="2022/05/09 10:00" />
+		<property name="end" value="2022/05/09 12:00" />
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="link" value="http://www.example.com" />
+		<property name="isPublic" value="false" />
+		<property name="workload" value="15.0" />
+		<property name="executionPeriod" value="1286.0" />
+		<property name="Managers" ref="Managers2Managers" />
+	</bean>
+	<bean id="task07" class="acme.entities.tasks.Task">
+		<property name="title" value="task7"/>
+		<property name="begin" value="2025/10/27 10:00"/>
+		<property name="end" value="2025/10/27 12:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="link" value="http://www.example.com"/>
+		<property name="isPublic" value="false"/>
+		<property name="workload" value="30.0" />
+		<property name="executionPeriod" value="830.0" />
+		<property name="Managers" ref="Managers2Managers" />
+	</bean>
+	<bean id="task08" class="acme.entities.tasks.Task">
+		<property name="title" value="task8"/>
+		<property name="begin" value="2020/10/27 10:00"/>
+		<property name="end" value="2020/10/30 10:10"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="link" value="http://www.example.com"/>
+		<property name="isPublic" value="true"/>
+		<property name="workload" value="25.30" />
+		<property name="executionPeriod" value="830.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+	<bean id="task09" class="acme.entities.tasks.Task">
+		<property name="title" value="task9"/>
+		<property name="begin" value="2021/01/27 11:00"/>
+		<property name="end" value="2021/03/30 11:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="link" value="http://www.example.com"/>
+		<property name="isPublic" value="true"/>
+		<property name="workload" value="20.0" />
+		<property name="executionPeriod" value="1498.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+	<bean id="task10" class="acme.entities.tasks.Task">
+		<property name="title" value="task10"/>
+		<property name="begin" value="2021/08/20 09:00"/>
+		<property name="end" value="2021/08/20 10:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="link" value="http://www.example.com"/>
+		<property name="isPublic" value="true"/>
+		<property name="workload" value="26.15" />
+		<property name="executionPeriod" value="1070.0" />
+		<property name="Managers" ref="Managers1Managers" />
+	</bean>
+
+	<!-- Managers -->
+		<bean name="Managers1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="Managers1" />
+		<property name="password" value="Managers1" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Managers" />
+				<property name="surname" value="One" />
+				<property name="email" value="Managers1@mail.com" />
+				<property name="phone" value="+44 123-456-789" />
+			</bean>
+		</property>
+		<property name="enabled" value="true" />
+		<property name="roles">
+			<list>
+				<ref bean="Managers1Managers" />
+				<ref bean="Managers1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="Managers1Managers" class="acme.entities.roles.Managers">
+		<property name="userAccount" ref="Managers1UserAccount" />
+		<property name="company" value="PinguLovers" />
+		<property name="sector" value="Informatica" />
+	</bean>
+
+	<bean name="Managers1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="Managers1UserAccount" />
+	</bean>
+	
+	<bean name="Managers2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="Managers2" />
+		<property name="password" value="Managers2" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Managers" />
+				<property name="surname" value="One" />
+				<property name="email" value="Managers2@mail.com" />
+				<property name="phone" value="+44 123-456-789" />
+			</bean>
+		</property>
+		<property name="enabled" value="true" />
+		<property name="roles">
+			<list>
+				<ref bean="Managers2Managers" />
+				<ref bean="Managers2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="Managers2Managers" class="acme.entities.roles.Managers">
+		<property name="userAccount" ref="Managers2UserAccount" />
+		<property name="company" value="TigerLovers" />
+		<property name="sector" value="Informatica" />
+	</bean>
+
+	<bean name="Managers2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="Managers2UserAccount" />
+	</bean>
+
+	<!-- Workplan -->
+	<bean name="workPlan1" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="WorkPlan 1" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2021/05/09 09:00" />
+		<property name="end" value="2021/06/09 09:00" />
+		<property name="Managers" ref="Managers1Managers" />
+		<property name="tasks">
+			<list>
+				<ref bean="task01" />
+				<ref bean="task02" />
+				<ref bean="task04" />
+			</list>
+		</property>
+		<property name="workload" value="56.0"></property>
+		<property name="executionPeriod" value="31.744"></property>
+	</bean>
+
+	<bean name="workPlan2" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="Workplan 2" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2021/05/19 00:00" />
+		<property name="end" value="2021/06/19 00:00" />
+		<property name="Managers" ref="Managers1Managers" />
+		<property name="tasks">
+			<null />
+		</property>
+		<property name="executionPeriod" value="744.44640"></property>
+	</bean>
+
+	<bean name="workPlan3" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="Workplan 3" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2022/05/09 09:00" />
+		<property name="end" value="2022/06/09 09:00" />
+		<property name="Managers" ref="Managers1Managers" />
+		<property name="tasks">
+			<list>
+				<ref bean="task03" />
+				<ref bean="task04" />
+			</list>
+		</property>
+		<property name="workload" value="11.3"></property>
+		<property name="executionPeriod" value="744.44640"></property>
+	</bean>
+
+	<bean name="workPlan4" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="Workplan 4" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2021/05/12 09:00" />
+		<property name="end" value="2021/06/12 09:00" />
+		<property name="Managers" ref="Managers2Managers" />
+		<property name="tasks">
+			<list>
+				<ref bean="task05" />
+			</list>
+		</property>
+		<property name="workload" value="10.15"></property>
+		<property name="executionPeriod" value="744.44640"></property>
+	</bean>
+
+	<bean name="workPlan5" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="Workplan 5" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2021/05/12 09:00" />
+		<property name="end" value="2021/06/12 09:00" />
+		<property name="Managers" ref="Managers2Managers" />		
+		<property name="tasks">
+			<null />
+		</property>
+		<property name="executionPeriod" value="744.44649"></property>
+	</bean>
+
+	<bean name="workPlan6" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="Workplan 6" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2021/05/12 09:00" />
+		<property name="end" value="2021/06/12 09:00" />
+		<property name="Managers" ref="Managers2Managers" />		
+		<property name="tasks">
+			<list>
+				<ref bean="task03" />
+			</list>
+		</property>
+		<property name="workload" value="5.30"></property>
+		<property name="executionPeriod" value="744.44649"></property>
+	</bean>
+	
+	<bean name="workPlan7" class="acme.entities.workPlan.WorkPlan">
+		<property name="title" value="Workplan 7" />
+		<property name="isPublic" value="false" />
+		<property name="begin" value="2021/04/10 00:00" />
+		<property name="end" value="2021/04/12 00:00" />
+		<property name="Managers" ref="Managers2Managers" />		
+		<property name="tasks">
+			<null />
+		</property>
+		<property name="executionPeriod" value="48.2880 "></property>
+	</bean>
+
+	<bean name="word1" class="acme.entities.spam.Word">
+		<property name="word" value = "Nigeria"/>
+	</bean>
+
+	<bean name="word2" class="acme.entities.spam.Word">
+		<property name="word" value = "sexo"/>
+	</bean>
+
+	<bean name="word3" class="acme.entities.spam.Word">
+		<property name="word" value = "sex"/>
+	</bean>
+
+	<bean name="word4" class="acme.entities.spam.Word">
+		<property name="word" value = "hardcore"/>
+	</bean>
+
+	<bean name="word5" class="acme.entities.spam.Word">
+		<property name="word" value = "Viagra"/>
+	</bean>
+
+	<bean name="word6" class="acme.entities.spam.Word">
+		<property name="word" value = "Cialis"/>
+	</bean>
+
+	<bean name="word7" class="acme.entities.spam.Word">
+		<property name="word" value = "Has ganado"/>
+	</bean>
+
+	<bean name="word8" class="acme.entities.spam.Word">
+		<property name="word" value = "You've won"/>
+	</bean>
+
+	<bean name="word9" class="acme.entities.spam.Word">
+		<property name="word" value = "You have won"/>
+	</bean>
+
+	<bean name="word10" class="acme.entities.spam.Word">
+		<property name="word" value = "Millon de euros"/>
+	</bean>
+
+	<bean name="word11" class="acme.entities.spam.Word">
+		<property name="word" value = "Million dollars"/>
+	</bean>
+
+	<bean name="spam1" class="acme.entities.spam.Spam">
+		<property name="spamWords" >
+				<list>
+					<ref bean="word1" />
+					<ref bean="word2" />
+					<ref bean="word3" />
+					<ref bean="word4" />
+					<ref bean="word5" />
+					<ref bean="word6" />
+					<ref bean="word7" />
+					<ref bean="word8" />
+					<ref bean="word9" />
+					<ref bean="word10" />
+					<ref bean="word11" />
+				</list>
+			</property>
+		<property name="threshold" value="10." />
+	</bean>
+</beans>

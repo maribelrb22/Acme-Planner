@@ -1,0 +1,29 @@
+# i18n_en.messages
+
+Managers.task.list.label.title = Title
+Managers.task.list.label.executionPeriod = Execution Period
+Managers.task.list.label.workload = Workload
+Managers.task.list.label.isPublic = Privacy
+
+Managers.task.form.label.title = Title
+Managers.task.form.label.begin = Start date
+Managers.task.form.label.end = End date
+Managers.task.form.label.description = Description
+Managers.task.form.label.link = Link
+Managers.task.form.label.isPublic = Public
+Managers.task.form.label.workload = Workload
+Managers.task.form.label.executionPeriod = Execution Period
+Managers.task.form.error.must-be-before-end = Begin must be before end
+Managers.task.form.error.must-be-in-future = The date must be in future
+Managers.task.form.error.must-be-less-than-work-period = The workload must be less than execution period
+Managers.task.form.error.decimal-must-be-under-60 = Decimal must be under 60
+Managers.task.form.error.spam = Your text is considered spam, please, use a proper vocabulary
+Managers.task.form.error.must-be-after-begin = End must be after begin
+Managers.task.form.error.worPlan-public = This task belongs to a public work plan
+
+Managers.task.form.button.return = Return
+Managers.task.form.button.create = Create
+Managers.task.form.button.update = Update
+Managers.task.form.button.delete = Delete
+Managers.task.form.button.publish = Publish
+Managers.task.form.button.unpublish = Privatize

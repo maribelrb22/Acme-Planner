@@ -1,0 +1,19 @@
+***************
+*** 18,24 ****
+  # HINT+ unless you clearly command them.  You may find further information about them at
+  # HINT+ https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+  
+  spring.datasource.driver-class-name				= com.mysql.cj.jdbc.Driver
+  
+  spring.jpa.hibernate.dialect					= org.hibernate.dialect.MySQL8Dialect
+  spring.jpa.hibernate.ddl-auto					= validate
+--- 18,26 ----
+  # HINT+ unless you clearly command them.  You may find further information about them at
+  # HINT+ https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+  
++ spring.datasource.type							= com.zaxxer.hikari.HikariDataSource
+  spring.datasource.driver-class-name				= com.mysql.cj.jdbc.Driver
++ spring.datasource.hikari.maximum-pool-size 		= 4
+  
+  spring.jpa.hibernate.dialect					= org.hibernate.dialect.MySQL8Dialect
+  spring.jpa.hibernate.ddl-auto					= validate

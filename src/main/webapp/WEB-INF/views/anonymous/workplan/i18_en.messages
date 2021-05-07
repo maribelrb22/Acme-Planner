@@ -1,0 +1,14 @@
+# i18n_en.messages
+
+anonymous.workplan.list.label.isPublic = Is the workplan public?
+anonymous.workplan.list.label.tasks = Tasks
+anonymous.workplan.list.label.begin = Start date
+anonymous.workplan.list.label.end = End date
+anonymous.workplan.form.label.isPublic = Is it public?
+anonymous.workplan.form.label.begin = Start date
+anonymous.workplan.form.label.end = End date
+anonymous.workplan.form.label.workload = Workload
+anonymous.workplan.form.button.return = Return
+anonymous.workplan.form.label.title = Title
+anonymous.workplan.list.label.title = Title
+

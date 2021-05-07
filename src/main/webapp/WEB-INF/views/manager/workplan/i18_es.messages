@@ -1,0 +1,46 @@
+# i18n_es.messages
+Managers.workplan.list.label.isPublic = ¿Es el plan público?
+Managers.workplan.list.label.begin = Fecha de comienzo
+Managers.workplan.list.label.end = Fecha de fin
+Managers.workplan.list.label.tasks = Tareas
+Managers.workplan.list.label.id = Id del plan
+Managers.workplan.list.label.Managers = Managers
+Managers.workplan.list.label.title = Titulo
+Managers.workplan.list.label.workload= Carga de trabajo
+Managers.workplan.list.label.executionPeriod= Periodo de ejecucion
+Managers.workplan.form.label.isPublic = ¿Es el plan público?
+Managers.workplan.form.label.begin = Fecha de comienzo
+Managers.workplan.form.label.begin.recommend= Fecha de inicio recomendada: 
+Managers.workplan.form.label.end = Fecha de fin
+Managers.workplan.form.label.end.recommend= Fecha de fin recomendada:  
+Managers.workplan.form.label.workload = Carga de trabajo
+Managers.workplan.form.button.return = Volver
+Managers.workplan.form.label.id = Id del plan
+Managers.workplan.form.button.create = Crear
+Managers.workplan.form.label.tasks.title= Titulo
+Managers.workplan.form.label.tasks.id= Id
+Managers.workplan.form.label.tasks= Tareas del plan de trabajo
+Managers.workplan.form.button.delete= Eliminar
+Managers.workplan.form.label.tasks.public = Privacidad
+Managers.workplan.form.label.tasks.public.true= Publica
+Managers.workplan.form.label.tasks.public.false= Privada
+Managers.workplan.form.button.publish = Publicar
+Managers.workplan.form.label.isPublic.true = Publica
+Managers.workplan.form.label.isPublic.false = Privada
+Managers.workplan.form.label.title= Titulo
+Managers.workplan.form.label.executionPeriod= Periodo de ejecucion
+Managers.workplan.form.button.update= Actualizar
+Managers.workplan.form.button.addTask= Añadir tarea
+Managers.workplan.form.select.addTask = Tareas disponibles para añadir
+Managers.workplan.form.button.removeTask= X
+Managers.workplan.form.button.privatize= Privatizar
+
+Managers.workplan.form.error.must-be-before-end = La fecha de inicio debe ser anterior a la fecha de fin
+Managers.workplan.form.error.must-be-in-future = La fecha debe estar en el futuro 
+Managers.workplan.form.error.must-be-after-begin= La fecha fin debe ser posterior a la de inicio
+Managers.workplan.form.error.spam = Tu texto es considerado spam, por favor, usa un vocabulario adecuado
+Managers.workplan.form.error.all-tasks-must-be-public= Para publicar un plan de trabajo todas sus tareas deben ser públicas
+
+Managers.workplan.form.addTask.error.task = La tarea no debe ser nula
+Managers.workplan.form.addTask.error.public = Los planes de trabajo públicos solo pueden tener tareas públicas
+Managers.workplan.form.addTask.error.executionPeriod = Un plan de trabajo tiene un periodo de ejecución que debe ser lo suficientemente amplio como para posicionar todas las tareas 
