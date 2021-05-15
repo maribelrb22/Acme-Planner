@@ -8,8 +8,8 @@ import acme.testing.AcmePlannerTest;
 public class CreateTests extends AcmePlannerTest{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/sign-up/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void positiveBecomeManager(final String username, final String password, final String name, final String surname, final String email,final String phone, final String company, final String sector) {
+	@CsvFileSource(resources = "/authenticated/manager/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void positiveBecomeManager(final String username, final String password, final String name, final String surname, final String email, final String company, final String sector) {
 		super.signUp(username, password, name, surname, email, "");
 		super.signIn(username, password);
 		super.clickOnMenu("Account", "Become a Managers");
@@ -20,5 +20,17 @@ public class CreateTests extends AcmePlannerTest{
 		super.checkSimplePath("/master/welcome");
 
 	}
+	@ParameterizedTest
+	@CsvFileSource(resources = "/authenticated/manager/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void negativeBecomeManager(final String username, final String password, final String name, final String surname, final String email) {
+		super.signUp(username, password, name, surname, email, "");
+		super.signIn(username, password);
+		super.clickOnMenu("Account", "Become a Managers");
+		super.fillInputBoxIn("company", "");
+		super.fillInputBoxIn("sector", "");
+		
+		super.clickOnSubmitButton("Register");
+		super.checkErrorsExist();
 
+	}
 }
