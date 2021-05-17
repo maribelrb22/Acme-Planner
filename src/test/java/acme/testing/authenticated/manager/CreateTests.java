@@ -21,6 +21,7 @@ public class CreateTests extends AcmePlannerTest{
 		
 		super.clickOnSubmitButton("Register");
 		super.checkErrorsExist();
+		super.signOut();
 
 	}
 	
@@ -35,7 +36,10 @@ public class CreateTests extends AcmePlannerTest{
 		super.fillInputBoxIn("sector", sector);
 		
 		super.clickOnSubmitButton("Register");
-		super.checkSimplePath("/master/welcome");
+		super.clickOnMenu("Account", "Managers data");		
+		super.checkInputBoxHasValue("company", company);
+		super.checkInputBoxHasValue("sector", sector);
+		super.signOut();
 
 	}
 
