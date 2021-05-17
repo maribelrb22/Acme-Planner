@@ -74,7 +74,7 @@
 	<bean id="task01" class="acme.entities.tasks.Task">
 		<property name="title" value="task1" />
 		<property name="begin" value="2010/10/12 10:00" />
-		<property name="end" value="2010/10/13 10:10"/>
+		<property name="end" value="2010/10/13 10:00"/>
 		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="true" />
