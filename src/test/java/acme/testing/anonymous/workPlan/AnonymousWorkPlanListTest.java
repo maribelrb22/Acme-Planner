@@ -9,6 +9,9 @@ import acme.testing.AcmePlannerTest;
 
 public class AnonymousWorkPlanListTest extends AcmePlannerTest {
 	
+	// Test cases -------------------------------------------------------------
+	
+	// This test case check that if you enter as anonymous in workPlan list, the columns found are the expected.
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/workPlan/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

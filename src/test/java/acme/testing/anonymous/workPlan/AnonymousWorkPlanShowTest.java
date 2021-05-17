@@ -8,6 +8,9 @@ import acme.testing.AcmePlannerTest;
 
 public class AnonymousWorkPlanShowTest extends AcmePlannerTest{
 
+	// Test cases -------------------------------------------------------------
+	
+	// This test case check that if you enter as anonymous in workPlan list, the type of the different input boxes found is the expected.
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/workPlan/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
