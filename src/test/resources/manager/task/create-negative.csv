@@ -1,0 +1,14 @@
+recordIndex,title,begin,end,description,link,isPublic,workload
+3,,,,,,false,
+3,,2020/10/12 10:00,2020/10/13 10:10,The principals of the system can be either anonymous users.,http://www.example.com,false,13.00
+3,task3,,2021/12/13 09:00,The principals of the system can be either anonymous users.,http://www.example.com,true,55.30
+3,task4,2021/11/09 07:00,,The principals of the system can be either anonymous users.,http://www.example.com,true,0.30
+3,task8,2020/10/27 10:00,2020/10/30 10:10,,http://www.example.com,true,25.30
+3,task9,2020/01/27 11:00,2020/01/30 11:00,The principals of the system can be either anonymous users.,,false,
+3,task10,2021/08/20 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.60
+3,task21,2021/08/21 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.40
+3,task10,2021/08/20 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,10.10
+3,Has gananado un viajea a Nigeria,2021/08/20 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,10.10
+3,task10,2021/08/20 09:00,2021/08/20 10:00,Sexo en Nigeria,http://www.example.com,true,0.10,1.00
+3,task10,2021/08/20 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,1.01
+3,t,2021/08/21 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.40

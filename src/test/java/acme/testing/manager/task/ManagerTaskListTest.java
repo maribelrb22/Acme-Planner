@@ -39,7 +39,5 @@ public class ManagerTaskListTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("executionPeriod", executionPeriod);
 
 		super.signOut();
-		
-		
 	}
 }
