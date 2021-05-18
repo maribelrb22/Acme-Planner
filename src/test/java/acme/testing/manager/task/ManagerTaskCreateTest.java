@@ -11,7 +11,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 	// Lifecycle management ---------------------------------------------------
 	
 	// Test cases -------------------------------------------------------------
-	//Esta caso de puebra consiste em distintas inserciones de tareas por un manager correctamente
+	//Esta caso de puebra consiste en distintas inserciones de tareas correctas por un manager
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -19,14 +19,17 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		final String description, final String link, final String isPublic, final String workload) {
 		
 		super.signIn("Managers1", "Managers1");
-
+		
+		//Se accede al formulario a traves del menu
 		super.clickOnMenu("Managers", "Create Task");
-
+		
+		//Se insertan los datos en el formulario
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("begin", begin);
 		super.fillInputBoxIn("end", end);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("link", link);
+		//Este if es necesario porque sino no reconoce el botón
 		if(isPublic.equals("true")) {
 		super.fillInputBoxIn("isPublic", "true");
 		}
@@ -35,7 +38,8 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		}
 		super.fillInputBoxIn("workload", workload);
 		super.clickOnSubmitButton("Create");
-
+		
+		//Por último se comprueba la que la tarea se ha insertado correctamente
 		super.clickOnMenu("Managers", "Task list");
 		
 		super.checkColumnHasValue(recordIndex, 0, title);
@@ -56,6 +60,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		
 	}
 	
+	//Esta caso de puebra consiste en distintas inserciones incorrectas de tareas por un manager
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
@@ -63,9 +68,11 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		final String description, final String link, final String isPublic, final String workload) {
 		
 		super.signIn("Managers2", "Managers2");
-
+		
+		//Se accede al formulario a traves del menu
 		super.clickOnMenu("Managers", "Create Task");
-
+		
+		//Se insertan los datos en el formulario
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("begin", begin);
 		super.fillInputBoxIn("end", end);
@@ -78,6 +85,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("workload", workload);
 		super.clickOnSubmitButton("Create");
 		
+		//Se comprueba que ha saltado algún error durante la inserción
 		super.checkErrorsExist();
 
 		super.signOut();
