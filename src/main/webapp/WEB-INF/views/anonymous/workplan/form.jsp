@@ -8,7 +8,5 @@
     <acme:form-textbox code="anonymous.workplan.form.label.begin" path="begin"/>
     <acme:form-textbox code="anonymous.workplan.form.label.end" path="end"/>
     <acme:form-textbox code="anonymous.workplan.form.label.workload" path="workload"/>
-
-
     <acme:form-return code="anonymous.workplan.form.button.return"/>
 </acme:form>

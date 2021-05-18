@@ -73,114 +73,112 @@
 	<!-- Task -->
 	<bean id="task01" class="acme.entities.tasks.Task">
 		<property name="title" value="task1" />
-		<property name="begin" value="2010/05/12 10:00" />
-		<property name="end" value="2010/10/13 10:10"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss.
-		The tasks can be either public or private." />
+		<property name="begin" value="2010/10/12 10:00" />
+		<property name="end" value="2010/10/13 10:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="true" />
 		<property name="workload" value="20.0" />
-		<property name="executionPeriod" value="3782.0" />
+		<property name="executionPeriod" value="24.0" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 	<bean id="task02" class="acme.entities.tasks.Task">
 		<property name="title" value="task2" />
 		<property name="begin" value="2020/10/12 10:00" />
 		<property name="end" value="2020/10/13 10:10"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss.
-		The tasks can be either public or private." />
+		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="false" />
-		<property name="workload" value="30.0" />
-		<property name="executionPeriod" value="110.0" />
+		<property name="workload" value="13.0" />
+		<property name="executionPeriod" value="24.10" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 	<bean id="task03" class="acme.entities.tasks.Task">
 		<property name="title" value="task3" />
-		<property name="begin" value="2022/02/13 10:00" />
-		<property name="end" value="2022/03/13 23:59"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="begin" value="2021/11/13 09:00" />
+		<property name="end" value="2021/12/13 09:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="true" />
-		<property name="workload" value="5.30" />
-		<property name="executionPeriod" value="686.0" />
+		<property name="workload" value="55.30" />
+		<property name="executionPeriod" value="720.0" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 	<bean id="task04" class="acme.entities.tasks.Task">
 		<property name="title" value="task4" />
-		<property name="begin" value="2022/06/09 09:00" />
-		<property name="end" value="2022/06/09 10:00"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="begin" value="2021/11/09 07:00" />
+		<property name="end" value="2021/11/09 08:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="true" />
-		<property name="workload" value="6.0" />
-		<property name="executionPeriod" value="759.0" />
+		<property name="workload" value="0.30" />
+		<property name="executionPeriod" value="1.0" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 	<bean id="task05" class="acme.entities.tasks.Task">
 		<property name="title" value="task5" />
 		<property name="begin" value="2024/10/14 09:00" />
 		<property name="end" value="2024/10/14 10:10" />
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="false" />
-		<property name="workload" value="10.15" />
-		<property name="executionPeriod" value="63.0" />
+		<property name="workload" value="0.15" />
+		<property name="executionPeriod" value="1.10" />
 		<property name="Managers" ref="Managers2Managers" />
 	</bean>
 	<bean id="task06" class="acme.entities.tasks.Task">
 		<property name="title" value="task6" />
 		<property name="begin" value="2022/05/09 10:00" />
 		<property name="end" value="2022/05/09 12:00" />
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss." />
+		<property name="description" value="The principals of the system can be either anonymous users." />
 		<property name="link" value="http://www.example.com" />
 		<property name="isPublic" value="false" />
-		<property name="workload" value="15.0" />
-		<property name="executionPeriod" value="1286.0" />
+		<property name="workload" value="1.0" />
+		<property name="executionPeriod" value="2.0" />
 		<property name="Managers" ref="Managers2Managers" />
 	</bean>
 	<bean id="task07" class="acme.entities.tasks.Task">
 		<property name="title" value="task7"/>
 		<property name="begin" value="2025/10/27 10:00"/>
 		<property name="end" value="2025/10/27 12:00"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="description" value="The principals of the system can be either anonymous users."/>
 		<property name="link" value="http://www.example.com"/>
 		<property name="isPublic" value="false"/>
-		<property name="workload" value="30.0" />
-		<property name="executionPeriod" value="830.0" />
+		<property name="workload" value="0.45" />
+		<property name="executionPeriod" value="2.0" />
 		<property name="Managers" ref="Managers2Managers" />
 	</bean>
 	<bean id="task08" class="acme.entities.tasks.Task">
 		<property name="title" value="task8"/>
 		<property name="begin" value="2020/10/27 10:00"/>
 		<property name="end" value="2020/10/30 10:10"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="description" value="The principals of the system can be either anonymous users."/>
 		<property name="link" value="http://www.example.com"/>
 		<property name="isPublic" value="true"/>
 		<property name="workload" value="25.30" />
-		<property name="executionPeriod" value="830.0" />
+		<property name="executionPeriod" value="72.10" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 	<bean id="task09" class="acme.entities.tasks.Task">
 		<property name="title" value="task9"/>
-		<property name="begin" value="2021/01/27 11:00"/>
-		<property name="end" value="2021/03/30 11:00"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="begin" value="2020/01/27 11:00"/>
+		<property name="end" value="2020/01/30 11:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users."/>
 		<property name="link" value="http://www.example.com"/>
 		<property name="isPublic" value="true"/>
 		<property name="workload" value="20.0" />
-		<property name="executionPeriod" value="1498.0" />
+		<property name="executionPeriod" value="72.0" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 	<bean id="task10" class="acme.entities.tasks.Task">
 		<property name="title" value="task10"/>
 		<property name="begin" value="2021/08/20 09:00"/>
 		<property name="end" value="2021/08/20 10:00"/>
-		<property name="description" value="The principals of the system can be either anonymous users, administrators, or Managerss."/>
+		<property name="description" value="The principals of the system can be either anonymous users."/>
 		<property name="link" value="http://www.example.com"/>
 		<property name="isPublic" value="true"/>
-		<property name="workload" value="26.15" />
-		<property name="executionPeriod" value="1070.0" />
+		<property name="workload" value="0.25" />
+		<property name="executionPeriod" value="1.0" />
 		<property name="Managers" ref="Managers1Managers" />
 	</bean>
 
@@ -248,7 +246,7 @@
 	<!-- Workplan -->
 	<bean name="workPlan1" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="WorkPlan 1" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2021/05/09 09:00" />
 		<property name="end" value="2021/06/09 09:00" />
 		<property name="Managers" ref="Managers1Managers" />
@@ -259,25 +257,26 @@
 				<ref bean="task04" />
 			</list>
 		</property>
-		<property name="workload" value="56.0"></property>
+		<property name="workload" value="56.00"></property>
 		<property name="executionPeriod" value="31.744"></property>
 	</bean>
 
 	<bean name="workPlan2" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="Workplan 2" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2021/05/19 00:00" />
 		<property name="end" value="2021/06/19 00:00" />
 		<property name="Managers" ref="Managers1Managers" />
 		<property name="tasks">
 			<null />
 		</property>
+		<property name="workload" value="0.00"></property>
 		<property name="executionPeriod" value="744.44640"></property>
 	</bean>
 
 	<bean name="workPlan3" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="Workplan 3" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2022/05/09 09:00" />
 		<property name="end" value="2022/06/09 09:00" />
 		<property name="Managers" ref="Managers1Managers" />
@@ -287,7 +286,7 @@
 				<ref bean="task04" />
 			</list>
 		</property>
-		<property name="workload" value="11.3"></property>
+		<property name="workload" value="11.30"></property>
 		<property name="executionPeriod" value="744.44640"></property>
 	</bean>
 
@@ -345,66 +344,4 @@
 		<property name="executionPeriod" value="48.2880 "></property>
 	</bean>
 
-	<bean name="word1" class="acme.entities.spam.Word">
-		<property name="word" value = "Nigeria"/>
-	</bean>
-
-	<bean name="word2" class="acme.entities.spam.Word">
-		<property name="word" value = "sexo"/>
-	</bean>
-
-	<bean name="word3" class="acme.entities.spam.Word">
-		<property name="word" value = "sex"/>
-	</bean>
-
-	<bean name="word4" class="acme.entities.spam.Word">
-		<property name="word" value = "hardcore"/>
-	</bean>
-
-	<bean name="word5" class="acme.entities.spam.Word">
-		<property name="word" value = "Viagra"/>
-	</bean>
-
-	<bean name="word6" class="acme.entities.spam.Word">
-		<property name="word" value = "Cialis"/>
-	</bean>
-
-	<bean name="word7" class="acme.entities.spam.Word">
-		<property name="word" value = "Has ganado"/>
-	</bean>
-
-	<bean name="word8" class="acme.entities.spam.Word">
-		<property name="word" value = "You've won"/>
-	</bean>
-
-	<bean name="word9" class="acme.entities.spam.Word">
-		<property name="word" value = "You have won"/>
-	</bean>
-
-	<bean name="word10" class="acme.entities.spam.Word">
-		<property name="word" value = "Millon de euros"/>
-	</bean>
-
-	<bean name="word11" class="acme.entities.spam.Word">
-		<property name="word" value = "Million dollars"/>
-	</bean>
-
-	<bean name="spam1" class="acme.entities.spam.Spam">
-		<property name="spamWords" >
-				<list>
-					<ref bean="word1" />
-					<ref bean="word2" />
-					<ref bean="word3" />
-					<ref bean="word4" />
-					<ref bean="word5" />
-					<ref bean="word6" />
-					<ref bean="word7" />
-					<ref bean="word8" />
-					<ref bean="word9" />
-					<ref bean="word10" />
-					<ref bean="word11" />
-				</list>
-			</property>
-		<property name="threshold" value="10." />
-	</bean>
 </beans>
