@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class UpdateTests extends AcmePlannerTest {
+public class AuthenticatedConsumerUpdateTest extends AcmePlannerTest {
+	
+	// This test case check that the data consumer can be modified
     @ParameterizedTest
     @CsvFileSource(resources = "/authenticated.consumer/positive-update.csv", encoding = "utf-8", numLinesToSkip = 1)    @Order(10)
     public void positiveUpdateConsumer(final String company, final String sector) {
@@ -26,6 +28,7 @@ public class UpdateTests extends AcmePlannerTest {
         super.signOut();
     }
 
+    // This test case check that the data consumer can't be modified because of empty fields
     @ParameterizedTest
     @CsvFileSource(resources = "/authenticated.consumer/negative-update.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(20)

@@ -6,9 +6,9 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-public class UpdateTests extends AcmePlannerTest {
+public class AuthenticatedManagerUpdateTest extends AcmePlannerTest {
 
-	//Pruebo que al cambiar los datos de manager se cambien correctamente
+	// This test case check that the data manager can be modified
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/manager/positive-update.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -29,6 +29,7 @@ public class UpdateTests extends AcmePlannerTest {
 		super.signOut();	
 	}
 	
+	// This test case check that the data manager can't be modified because of empty fields
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/manager/negative-update.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)

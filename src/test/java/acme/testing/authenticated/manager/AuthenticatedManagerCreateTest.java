@@ -6,9 +6,9 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-public class CreateTests extends AcmePlannerTest{
+public class AuthenticatedManagerCreateTest extends AcmePlannerTest{
 	
-	
+	// This test case check that the input boxes are empty, so the authenticated can't become manager and system throws error.
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/manager/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -25,7 +25,7 @@ public class CreateTests extends AcmePlannerTest{
 
 	}
 	
-	
+    // This test case check that the input boxes are fill without errors, so the authenticated can become manager
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/manager/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
