@@ -1,4 +1,4 @@
-username,password,name,surname,email,company,sector,
+username,password,name,surname,email,company,sector, phone
 johnny,johnny,Johnny,López,john@mail.com,"Cash & Carry, Co",Retailer,638845675
 lorraine,lorraine,Lorraine,Williams,lorraine@yellow-house.com,"Cash & Carry, Co",Retailer,638845675
 leslie,leslie,Leslie Marti,Ramport,leslie@us.es,"Networks, Inc.",Communications,638845675
