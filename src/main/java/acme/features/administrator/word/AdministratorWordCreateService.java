@@ -66,8 +66,8 @@ public class AdministratorWordCreateService implements AbstractCreateService<Adm
 		assert entity != null;
 		assert errors != null;
 		
-		final boolean spam = this.spamService.isItSpam(entity.getWord());
-		errors.state(request, spam == false, "word", "administrator.word.form.error.exists");
+		final boolean spam = this.spamService.isASpamWord(entity.getWord());
+		errors.state(request, Boolean.FALSE.equals(spam), "word", "administrator.word.form.error.exists");
 
 	}
 
