@@ -246,7 +246,7 @@
 	<!-- Workplan -->
 	<bean name="workPlan1" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="WorkPlan 1" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2021/05/09 09:00" />
 		<property name="end" value="2021/06/09 09:00" />
 		<property name="Managers" ref="Managers1Managers" />
@@ -257,25 +257,26 @@
 				<ref bean="task04" />
 			</list>
 		</property>
-		<property name="workload" value="56.0"></property>
+		<property name="workload" value="56.00"></property>
 		<property name="executionPeriod" value="31.744"></property>
 	</bean>
 
 	<bean name="workPlan2" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="Workplan 2" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2021/05/19 00:00" />
 		<property name="end" value="2021/06/19 00:00" />
 		<property name="Managers" ref="Managers1Managers" />
 		<property name="tasks">
 			<null />
 		</property>
+		<property name="workload" value="0.00"></property>
 		<property name="executionPeriod" value="744.44640"></property>
 	</bean>
 
 	<bean name="workPlan3" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="Workplan 3" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2022/05/09 09:00" />
 		<property name="end" value="2022/06/09 09:00" />
 		<property name="Managers" ref="Managers1Managers" />
@@ -285,7 +286,7 @@
 				<ref bean="task04" />
 			</list>
 		</property>
-		<property name="workload" value="11.3"></property>
+		<property name="workload" value="11.30"></property>
 		<property name="executionPeriod" value="744.44640"></property>
 	</bean>
 
