@@ -65,7 +65,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		assert !StringHelper.isBlank(surname);
 		assert !StringHelper.isBlank(email);
 		// phone is nullable
-
+ 
 		super.navigateHome();
 		super.clickOnMenu("Sign up", null);	
 		super.fillInputBoxIn("username", username);
