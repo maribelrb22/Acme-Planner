@@ -143,7 +143,7 @@
 		<property name="end" value="2025/10/27 12:00"/>
 		<property name="description" value="The principals of the system can be either anonymous users."/>
 		<property name="link" value="http://www.example.com"/>
-		<property name="isPublic" value="false"/>
+		<property name="isPublic" value="true"/>
 		<property name="workload" value="0.45" />
 		<property name="executionPeriod" value="2.0" />
 		<property name="Managers" ref="Managers2Managers" />
@@ -246,7 +246,7 @@
 	<!-- Workplan -->
 	<bean name="workPlan1" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="WorkPlan 1" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2021/05/09 09:00" />
 		<property name="end" value="2021/06/09 09:00" />
 		<property name="Managers" ref="Managers1Managers" />
@@ -263,7 +263,7 @@
 
 	<bean name="workPlan2" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="Workplan 2" />
-		<property name="isPublic" value="false" />
+		<property name="isPublic" value="true" />
 		<property name="begin" value="2021/05/19 00:00" />
 		<property name="end" value="2021/06/19 00:00" />
 		<property name="Managers" ref="Managers1Managers" />

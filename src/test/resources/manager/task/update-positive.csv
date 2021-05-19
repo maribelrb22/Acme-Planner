@@ -3,4 +3,4 @@ recordIndex,title,begin,end,description,link,isPublic,workload,executionPeriod
 0,task5Updated,2024/10/14 09:00,2024/10/14 10:10,The principals of the system can be either anonymous users.,http://www.updated.com,false,0.15,1.17
 0,task5Updated,2024/10/14 10:00,2024/10/14 10:10,The principals of the system can be either anonymous users.,http://www.updated.com,false,0.15,0.17
 1,task6h,2022/05/09 10:00,2022/05/09 12:00,Description Updated.,http://www.example.com,false,1.00,2.00
-2,task7h,2025/10/27 10:00,2025/10/27 14:00,The principals of the system can be either anonymous users.,http://www.example.com,false,0.45,4.00
+2,task7h,2025/10/27 10:00,2025/10/27 14:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.45,4.00
