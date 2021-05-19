@@ -1,9 +1,9 @@
 <%@page language="java"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-	
 
 <acme:form readonly="${!ItsMine}">
     <acme:form-hidden path="id"/>
@@ -48,10 +48,11 @@
 <!-- TASK TABLE -->
 <jstl:if test="${command=='show'|| command =='update' || errorsAdd}">    
 		   <div class="table-responsive">
-		   <table class="table table-striped table-condensed table-hover nowrap w-100">
+		   <table id="list" class="table table-striped table-condensed table-hover nowrap w-100">
 		   	  <caption><acme:message code="Managers.workplan.form.label.tasks"/></caption>
 			  <thead>
 				    <tr>
+				      <th scope="col"></th>
 				      <th scope="col"><acme:message code="Managers.workplan.form.label.tasks.id"/></th>
 				      <th scope="col"><acme:message code="Managers.workplan.form.label.tasks.title"/></th>
 				      <th scope="col"><acme:message code="Managers.workplan.form.label.tasks.public"/></th>
@@ -61,6 +62,7 @@
 				  <tbody>
 				  	<c:forEach items="${tasks}" var="task">
 					  	<tr class="table-light">
+					      <td></td>
 					      <td>${task.id}</td>
 					      <td>${task.title}</td>
 					      <td><acme:message code="Managers.workplan.form.label.tasks.public.${task.isPublic}"/></td>
@@ -94,5 +96,22 @@
 	</center>
 </jstl:if>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		var table;
 
+		table = $("#list").dataTable({
+			  "lengthMenu": [5, 10, 25, 50],
+			  "pageLength": 5,
+			  "pagingType": "numbers",
+ 			   "stateSave": true,
+			  "responsive": { details: { type: "column" } },
+			  "columnDefs": [ {targets: [0], visible: false} ],
+			         "dom": "<'row'<'col'f><'col'i>>" +
+				            "<'row'<'col'tr>>" +
+				            "<'row'<'col'l><'col'p>>",
+				   "order": [[ 0, "asc" ]],
+	    });
+	});	
+</script>
 

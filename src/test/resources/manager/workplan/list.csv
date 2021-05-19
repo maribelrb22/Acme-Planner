@@ -1,0 +1,4 @@
+recordIndex, title, begin, end, isPublic, workload, executionPeriod, tasks
+0, WorkPlan 1, 2021/05/09 09:00, 2021/06/09 09:00, true, 56.00, 31.74, "118; task1; Public; 119; task2; Private; 121; task4; Public"
+1, Workplan 2, 2021/05/19 00:00, 2021/06/19 00:00, true, 0.00, 744.45, ""
+2, Workplan 3, 2022/05/09 09:00, 2022/06/09 09:00, true, 11.30, 744.45, "120; task3; Public; 121; task4; Public"
