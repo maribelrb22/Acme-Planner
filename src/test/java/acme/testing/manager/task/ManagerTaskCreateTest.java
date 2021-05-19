@@ -11,7 +11,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 	// Lifecycle management ---------------------------------------------------
 	
 	// Test cases -------------------------------------------------------------
-	//Esta caso de puebra consiste en distintas inserciones de tareas correctas por un manager
+	//Este caso de prueba consiste en distintas inserciones de tareas correctas por un manager
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -60,7 +60,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		
 	}
 	
-	//Esta caso de puebra consiste en distintas inserciones incorrectas de tareas por un manager
+	//Este caso de prueba consiste en distintas inserciones incorrectas de tareas por un manager
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)

@@ -11,7 +11,7 @@ public class ManagerTaskListTest extends AcmePlannerTest {
 	// Lifecycle management ---------------------------------------------------
 
 	// Test cases -------------------------------------------------------------
-	//This test shows every shout in the data base
+	//This test checks the correct fields when listing tasks
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

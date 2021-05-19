@@ -75,7 +75,7 @@ public class ManagersTaskPublishService implements AbstractUpdateService<Manager
 		assert errors != null;
 		if(entity.getIsPublic().equals(true)) {
 			final int workPlansPublic=this.repository.findNumberOfPublicWorkPlansByTaskId(entity.getId());
-			errors.state(request, workPlansPublic<=0, "title", "Managers.task.form.error.worPlan-public");
+			errors.state(request, workPlansPublic==0, "title", "Managers.task.form.error.worPlan-public");
 		}
 	}
 
