@@ -52,11 +52,17 @@ public abstract class AcmeTest extends AbstractTest {
 	}
 
 	protected void checkPanicExists() {
-		assert false;
+		By locator;
+		
+		locator = By.xpath("//h1[normalize-space() = 'Unexpected error'");
+		assert super.exists(locator) : "Action resulted in panic";
 	}
 
 	protected void checkNotPanicExists() {
-		assert false;
+		By locator;
+		
+		locator = By.xpath("h1[normalize-space() = 'Unexpected error'");
+		assert !super.exists(locator) : "Action resulted in panic";
 	}
 
 	protected void checkErrorsExist() {

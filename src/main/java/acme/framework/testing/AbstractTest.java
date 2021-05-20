@@ -75,7 +75,10 @@ public abstract class AbstractTest {
 		assert !StringHelper.isBlank(contextPath) && contextPath.startsWith("/") && !contextPath.endsWith("/");
 		assert !StringHelper.isBlank(contextHome) && contextHome.startsWith("/") && !contextHome.endsWith("/");
 		assert !StringHelper.isBlank(contextQuery) && contextQuery.startsWith("?");
-
+		
+		this.host = host;
+		this.port = port;
+		
 		this.baseUrl = String.format("%s://%s:%s%s", protocol, host, port, contextPath);
 		this.homeUrl = String.format("%s%s%s", this.baseUrl, contextHome, contextQuery);
 	}
