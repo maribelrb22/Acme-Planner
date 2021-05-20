@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
+//adding a task to a workplan and expecting it doesn't work cause it doesn't fit the workload
 public class ManagerWorkplanAddTaskTest extends AcmePlannerTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/manager/workplan/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -17,6 +18,7 @@ public class ManagerWorkplanAddTaskTest extends AcmePlannerTest {
         super.clickOnSubmitButton("Add task");
         super.checkErrorsExist();
     }
+    //adding a task and expecting it works (notPanic cause it didn't expect errors in the form)
     @ParameterizedTest
     @CsvFileSource(resources = "/manager/workplan/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(20)
