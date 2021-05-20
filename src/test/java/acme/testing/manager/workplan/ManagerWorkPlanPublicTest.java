@@ -6,19 +6,19 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-public class ManagerWorkPlanPrivatizeTest extends AcmePlannerTest {
+public class ManagerWorkPlanPublicTest extends AcmePlannerTest {
 
-	// This test case check that the workplan can be privatized
+	// This test case check that the workplan can be published
 	@ParameterizedTest
-	@CsvFileSource(resources = "/manager/workplan/privatize-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/manager/workplan/public-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positivePrivatizeWorkplan(final int recordIndex, final String title, final String begin,
+	public void positivePublishWorkplan(final int recordIndex, final String title, final String begin,
 			final String end, final String isPublic, final String workload, final String executionPeriod) {
 
 		super.signIn("Managers1", "Managers1");
 		super.clickOnMenu("Managers", "Workplan list");
 
-		super.checkColumnHasValue(recordIndex, 1, isPublic);
+		super.checkColumnHasValue(recordIndex, 1, isPublic); //check that it's private
 		super.clickOnListingRecord(recordIndex);
 
 		super.checkInputBoxHasValue("title", title);
@@ -27,22 +27,20 @@ public class ManagerWorkPlanPrivatizeTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("begin", begin);
 		super.checkInputBoxHasValue("end", end);
 
-		super.clickOnSubmitButton("Privatize");
+		super.clickOnSubmitButton("Publish");
 		super.clickOnMenu("Managers", "Workplan list");
 
-		super.checkColumnHasValue(recordIndex, 1, "false");
+		super.checkColumnHasValue(recordIndex, 1, "true");
 
 		super.signOut();
 	}
-
-	// This test case check that the workplan can't be privatized because of an incorrect manager
-	// The id's that are being testing belongs to manager2
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/privatize-public-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void negativePrivatizeWorkplan(final int id) {
+	public void negativePublishWorkplan(final int id) {
 		super.signIn("Managers1", "Managers1");
-		super.navigate("managers/work-plan/privatize", String.format("id=%d", id));
+		super.navigate("managers/work-plan/publish", String.format("id=%d", id));
 
 		super.checkErrorsExist();
 
