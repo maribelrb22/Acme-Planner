@@ -303,7 +303,7 @@ public abstract class AbstractTest {
 	}
 
 	protected void navigate(final String path, final String query) {
-		assert this.isSimplePath(path);
+		//assert this.isSimplePath(path);
 		assert this.isSimpleQuery(query);
 
 		this.navigate(() -> {

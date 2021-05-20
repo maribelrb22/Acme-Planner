@@ -258,7 +258,7 @@
 			</list>
 		</property>
 		<property name="workload" value="56.00"></property>
-		<property name="executionPeriod" value="31.744"></property>
+		<property name="executionPeriod" value="744.00"></property>
 	</bean>
 
 	<bean name="workPlan2" class="acme.entities.workPlan.WorkPlan">
