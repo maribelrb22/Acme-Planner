@@ -26,7 +26,7 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 	
 	@Autowired
 	protected SpamService spam;
-	
+
 	@Override
 	public boolean authorise(final Request<WorkPlan> request) {
 		assert request != null;
@@ -75,16 +75,17 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-		final Date now =new Date();
+
+	try{
+		final Date now = new Date();
 		final Date begin = entity.getBegin();
 		final Date end = entity.getEnd();
-		
+
 		final boolean titleSpam = this.spam.isItSpam(entity.getTitle());
-			
+
 		if(!errors.hasErrors("begin") && !errors.hasErrors("end")) {
 			errors.state(request, end.after(begin), "begin", "Managers.workplan.form.error.must-be-before-end");
-		} 
+		}
 		if(!errors.hasErrors("begin")) {
 			errors.state(request, begin.after(now), "begin", "Managers.workplan.form.error.must-be-in-future");
 		}
@@ -93,23 +94,23 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 		}
 		if(!errors.hasErrors("begin") && !errors.hasErrors("end")) {
 			errors.state(request, begin.before(end), "end", "Managers.workplan.form.error.must-be-after-begin");
-		} 
+		}
 		if(!errors.hasErrors("title")) {
 			errors.state(request, !titleSpam,  "title", "Managers.workplan.form.error.spam");
 		}
-		
-		
+
+
 		final int workplanId = request.getModel().getInteger("id");
 		final WorkPlan workplan = this.repository.findWorkPlanById(workplanId);
 		final Managers Managers = workplan.getManagers();
 		final Principal principal = request.getPrincipal();
 		final Boolean itsMine = Managers.getUserAccount().getId() == principal.getAccountId();
 		final Boolean canPublish= itsMine && workplan.getTasks().stream().filter(x-> x.getIsPublic().equals(false)).count() == 0 && !workplan.getIsPublic();
-		
+
 		if(workplan.getTasks().size()>0) {
 			Date recommendedInitialDate = repository.findInitialDateFirstTask(workplanId).get(0);
 			Date recommendedEndDate= repository.findEndDateLastTask(workplanId).get(0);
-			
+
 			//Add or substract one day in miliseconds
 			recommendedInitialDate = new Date(recommendedInitialDate.getTime() - (1000 * 60 * 60 * 24));
 			recommendedInitialDate.setHours(8);
@@ -117,23 +118,29 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 			recommendedEndDate= new Date(recommendedEndDate.getTime() + (1000 * 60 * 60 * 24));
 			recommendedEndDate.setHours(17);
 			recommendedEndDate.setMinutes(0);
-			
+
 			request.getModel().setAttribute("recommendedInitialDate", recommendedInitialDate.toString());
 			request.getModel().setAttribute("recommendedEndDate", recommendedEndDate.toString());
-		}		
+		}
 		List<Task>taskList = repository.findTasksAvailable(Managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
 		if(workplan.getIsPublic())//If workplan is public, only public tasks can be added
 			taskList= taskList.stream().filter(x->x.getIsPublic()).collect(Collectors.toList());
-		
+
 		request.getModel().setAttribute("ItsMine", itsMine);
-        request.getModel().setAttribute("canPublish", canPublish);
-        request.getModel().setAttribute("tasks", workplan.getTasks());
+		request.getModel().setAttribute("canPublish", canPublish);
+		request.getModel().setAttribute("tasks", workplan.getTasks());
 		request.getModel().setAttribute("tasksEneabled", taskList);
 
 		final Collection<Task> ls = workplan.getTasks();
-		errors.state(request, ((end.getTime() - begin.getTime()) / (1000 * 3600)) 
-			>= (ls.stream().mapToDouble(Task::getExecutionPeriod).sum()), "executionPeriod", 
-			"Managers.workplan.form.addTask.error.executionPeriod");
+		errors.state(request, ((end.getTime() - begin.getTime()) / (1000 * 3600))
+						>= (ls.stream().mapToDouble(Task::getExecutionPeriod).sum()), "executionPeriod",
+				"Managers.workplan.form.addTask.error.executionPeriod");
+
+
+	}catch(Exception e){
+		errors.state(request, false, "begin", "Please, introduce a correct Date");
+		errors.state(request, false, "end", "Please, introduce a correct Date");
+	}
 	}
 
 	@Override
