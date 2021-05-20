@@ -105,8 +105,8 @@
 			  "pageLength": 5,
 			  "pagingType": "numbers",
  			   "stateSave": true,
+ 			  "columnDefs": [ { className: "control", orderable: false, targets: 0 } ],
 			  "responsive": { details: { type: "column" } },
-			  "columnDefs": [ {targets: [0], visible: false} ],
 			         "dom": "<'row'<'col'f><'col'i>>" +
 				            "<'row'<'col'tr>>" +
 				            "<'row'<'col'l><'col'p>>",

@@ -1,12 +1,9 @@
 package acme.features.manager.workPlan;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Managers;
-import acme.entities.tasks.Task;
 import acme.entities.workPlan.WorkPlan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
