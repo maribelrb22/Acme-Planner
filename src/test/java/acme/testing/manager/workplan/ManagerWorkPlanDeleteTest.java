@@ -35,14 +35,14 @@ public class ManagerWorkPlanDeleteTest extends AcmePlannerTest {
 		super.signOut();
 	}
 
-	// This test case check that a manager can't delete a workplan that he didn't
-	// create
+	// This test case check that a manager can't delete a workplan that he didn't create
+	// The id's that are being testing belongs to manager2
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void deleteNegativeWorkplan(final int id) {
 		super.signIn("Managers1", "Managers1");
-		super.navigate("managers/work-plan/show", String.format("id=%d", id));
+		super.navigate("managers/work-plan/delete", String.format("id=%d", id));
 
 		super.checkErrorsExist();
 
