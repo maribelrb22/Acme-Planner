@@ -1,10 +1,10 @@
 package acme.testing.manager.workplan;
 
-import acme.testing.AcmePlannerTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+
+import acme.testing.AcmePlannerTest;
 
 //adding a task to a workplan and expecting it doesn't work cause it doesn't fit the workload
 public class ManagerWorkplanAddTaskTest extends AcmePlannerTest {
