@@ -183,7 +183,7 @@
 	</bean>
 
 	<!-- Managers -->
-		<bean name="Managers1UserAccount" class="acme.framework.entities.UserAccount">
+	<bean name="Managers1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="Managers1" />
 		<property name="password" value="Managers1" />
 		<property name="identity">
@@ -212,7 +212,7 @@
 	<bean name="Managers1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="Managers1UserAccount" />
 	</bean>
-	
+
 	<bean name="Managers2UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="Managers2" />
 		<property name="password" value="Managers2" />
@@ -310,7 +310,7 @@
 		<property name="isPublic" value="false" />
 		<property name="begin" value="2021/05/12 09:00" />
 		<property name="end" value="2021/06/12 09:00" />
-		<property name="Managers" ref="Managers2Managers" />		
+		<property name="Managers" ref="Managers2Managers" />
 		<property name="tasks">
 			<null />
 		</property>
@@ -322,7 +322,7 @@
 		<property name="isPublic" value="false" />
 		<property name="begin" value="2021/05/12 09:00" />
 		<property name="end" value="2021/06/12 09:00" />
-		<property name="Managers" ref="Managers2Managers" />		
+		<property name="Managers" ref="Managers2Managers" />
 		<property name="tasks">
 			<list>
 				<ref bean="task03" />
@@ -331,13 +331,13 @@
 		<property name="workload" value="5.30"></property>
 		<property name="executionPeriod" value="744.44649"></property>
 	</bean>
-	
+
 	<bean name="workPlan7" class="acme.entities.workPlan.WorkPlan">
 		<property name="title" value="Workplan 7" />
 		<property name="isPublic" value="false" />
 		<property name="begin" value="2021/04/10 00:00" />
 		<property name="end" value="2021/04/12 00:00" />
-		<property name="Managers" ref="Managers2Managers" />		
+		<property name="Managers" ref="Managers2Managers" />
 		<property name="tasks">
 			<null />
 		</property>
