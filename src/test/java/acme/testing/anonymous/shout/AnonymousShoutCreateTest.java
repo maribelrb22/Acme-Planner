@@ -11,7 +11,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	// Lifecycle management ---------------------------------------------------
 
 	// Test cases -------------------------------------------------------------
-	//This test shows the creation of a shout in the data base
+	//This test shows the correct creation of a shout in the data base
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -32,7 +32,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		
 
 	}
-
+	/*This test case checks the correct denial when creating a shout some field is incorrect or contains a spam word*/
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)

@@ -9,12 +9,16 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractUpdateService;
+import acme.services.SpamService;
 
 @Service
 public class AdministratorWordUpdateService implements AbstractUpdateService<Administrator, Word>{
 	
 	@Autowired
 	protected AdministratorWordRepository repository;
+	
+	@Autowired
+	protected SpamService					spamService;
 	
 	@Override
 	public boolean authorise(final Request<Word> request) {
@@ -43,10 +47,9 @@ public class AdministratorWordUpdateService implements AbstractUpdateService<Adm
 
 	@Override
 	public Word findOne(final Request<Word> request) {
-		Word word = new Word();
 		final int id = request.getModel().getInteger("id");
-		word = this.repository.findOneWordById(id);
-		return word;
+		return this.repository.findOneWordById(id);
+		
 	}
 
 	@Override
@@ -55,13 +58,14 @@ public class AdministratorWordUpdateService implements AbstractUpdateService<Adm
 		assert entity != null;
 		assert errors != null;
 		
+		final boolean spam = this.spamService.isASpamWord(entity.getWord());
+		errors.state(request, Boolean.FALSE.equals(spam), "word", "administrator.word.form.error.exists");
 	}
 
 	@Override
 	public void update(final Request<Word> request, final Word entity) {
 		assert request != null;
 		assert entity != null;
-		
 		this.repository.save(entity);
 		
 	}

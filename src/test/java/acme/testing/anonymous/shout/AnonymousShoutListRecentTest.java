@@ -12,6 +12,8 @@ public class AnonymousShoutListRecentTest extends AcmePlannerTest {
 	// Lifecycle management ---------------------------------------------------
 
 	// Test cases -------------------------------------------------------------
+	
+	/*This test case checks the correct listing of all recent shouts checking every column in the table*/
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/list-recent.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
