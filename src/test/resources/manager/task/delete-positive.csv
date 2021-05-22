@@ -1,0 +1,3 @@
+recordIndex,title,begin,end,description,link,isPublic,workload,executionPeriod
+0,task1,2010/10/12 10:00,2010/10/13 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,20.00,24.00
+0,task2,2020/10/12 10:00,2020/10/13 10:10,The principals of the system can be either anonymous users.,http://www.example.com,false,13.00,24.10
