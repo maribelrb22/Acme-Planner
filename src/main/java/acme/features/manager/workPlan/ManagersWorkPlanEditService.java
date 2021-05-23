@@ -1,5 +1,6 @@
 package acme.features.manager.workPlan;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -33,15 +34,15 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 		final boolean result;
 		WorkPlan workplan;
 		int workplanId;
-		Managers Managers;
+		Managers managers;
 		Principal principal;
 		
 		workplanId=request.getModel().getInteger("id");
 		workplan=this.repository.findWorkPlanById(workplanId);
-		Managers = workplan.getManagers();
+		managers = workplan.getManagers();
 		principal = request.getPrincipal();
 		
-		result = (Managers.getUserAccount().getId() == principal.getAccountId());
+		result = (managers.getUserAccount().getId() == principal.getAccountId());
 		return result;
 	}
 
@@ -101,29 +102,32 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 		
 		final int workplanId = request.getModel().getInteger("id");
 		final WorkPlan workplan = this.repository.findWorkPlanById(workplanId);
-		final Managers Managers = workplan.getManagers();
+		final Managers managers = workplan.getManagers();
 		final Principal principal = request.getPrincipal();
-		final Boolean itsMine = Managers.getUserAccount().getId() == principal.getAccountId();
+		final Boolean itsMine = managers.getUserAccount().getId() == principal.getAccountId();
 		final Boolean canPublish= itsMine && workplan.getTasks().stream().filter(x-> x.getIsPublic().equals(false)).count() == 0 && !workplan.getIsPublic();
 		
-		if(workplan.getTasks().size()>0) {
+		if(!workplan.getTasks().isEmpty()) {
 			Date recommendedInitialDate = repository.findInitialDateFirstTask(workplanId).get(0);
 			Date recommendedEndDate= repository.findEndDateLastTask(workplanId).get(0);
 			
 			//Add or substract one day in miliseconds
-			recommendedInitialDate = new Date(recommendedInitialDate.getTime() - (1000 * 60 * 60 * 24));
-			recommendedInitialDate.setHours(8);
-			recommendedInitialDate.setMinutes(0);
-			recommendedEndDate= new Date(recommendedEndDate.getTime() + (1000 * 60 * 60 * 24));
-			recommendedEndDate.setHours(17);
-			recommendedEndDate.setMinutes(0);
+			final Calendar cal1 = Calendar.getInstance();
+            cal1.setTime(recommendedInitialDate);
+            cal1.add(Calendar.DAY_OF_MONTH, -1);
+            cal1.set(Calendar.HOUR, 8);
+
+            final Calendar cal2 = Calendar.getInstance();
+            cal2.setTime(recommendedEndDate);
+            cal2.add(Calendar.DAY_OF_MONTH, +1);
+            cal2.set(Calendar.HOUR, 17);
 			
-			request.getModel().setAttribute("recommendedInitialDate", recommendedInitialDate.toString());
-			request.getModel().setAttribute("recommendedEndDate", recommendedEndDate.toString());
+			request.getModel().setAttribute("recommendedInitialDate", cal1.getTime().toString());
+			request.getModel().setAttribute("recommendedEndDate", cal2.getTime().toString());
 		}		
-		List<Task>taskList = repository.findTasksAvailable(Managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
-		if(workplan.getIsPublic())//If workplan is public, only public tasks can be added
-			taskList= taskList.stream().filter(x->x.getIsPublic()).collect(Collectors.toList());
+		List<Task>taskList = repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
+		if(workplan.getIsPublic().booleanValue())//If workplan is public, only public tasks can be added
+			taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
 		
 		request.getModel().setAttribute("ItsMine", itsMine);
         request.getModel().setAttribute("canPublish", canPublish);

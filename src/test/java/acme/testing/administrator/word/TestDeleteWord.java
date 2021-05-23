@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import acme.testing.AcmePlannerTest;
 
-public class DeleteWord extends AcmePlannerTest {
+public class TestDeleteWord extends AcmePlannerTest {
 	
 	//Pruebo que al borrar una spam word, la que sustituye su posicion en la lista no es la misma que la borrada,
 	//y asi comprobar que se elimina correctamente. Siempre es la posición 0 de la lista ya que se van actualizando sus
