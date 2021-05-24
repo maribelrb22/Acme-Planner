@@ -34,18 +34,5 @@ public class ManagerWorkPlanPrivatizeTest extends AcmePlannerTest {
 
 		super.signOut();
 	}
-
-	// This test case check that the workplan can't be privatized because of an incorrect manager
-	// The id's that are being testing belongs to manager2
-	@ParameterizedTest
-	@CsvFileSource(resources = "/manager/workplan/privatize-public-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
-	public void negativePrivatizeWorkplan(final int id) {
-		super.signIn("Managers1", "Managers1");
-		super.navigate("managers/work-plan/privatize", String.format("id=%d", id));
-
-		super.checkErrorsExist();
-
-		super.signOut();
-	}
+	
 }

@@ -1,12 +1,11 @@
 package acme.testing.manager.workplan;
 
-import acme.testing.AcmePlannerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import java.util.Date;
+import acme.testing.AcmePlannerTest;
 
 public class ManagerWorkplanUpdateTest extends AcmePlannerTest {
     //We are updating an existing workplan with correct data

@@ -35,15 +35,4 @@ public class ManagerWorkPlanPublicTest extends AcmePlannerTest {
 		super.signOut();
 	}
 	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/manager/workplan/privatize-public-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
-	public void negativePublishWorkplan(final int id) {
-		super.signIn("Managers1", "Managers1");
-		super.navigate("managers/work-plan/publish", String.format("id=%d", id));
-
-		super.checkErrorsExist();
-
-		super.signOut();
-	}
 }
