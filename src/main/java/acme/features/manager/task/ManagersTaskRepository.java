@@ -14,7 +14,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface ManagersTaskRepository extends AbstractRepository{
 	
-	@Query("SELECT t FROM Task t WHERE t.Managers.userAccount.username = ?1 ")
+	@Query("SELECT t FROM Task t WHERE t.managers.userAccount.username = ?1 ")
 	Collection<Task> findAllManagersTasks(String manager);
 
 	@Query("SELECT t FROM Task t WHERE t.id = ?1")
