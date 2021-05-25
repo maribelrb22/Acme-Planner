@@ -1,0 +1,6 @@
+recordIndex, title, begin, end, isPublic
+3, , 2022/05/09 09:00, 2022/06/09 09:00, true
+4, WorkplanTest 2, , 2022/06/19 00:00, false
+5, WorkplanTest 3, 2022/05/09 09:00, , true
+6, WorkplanTest 4, 2021/05/09 09:00, 2021/06/19 00:00, true
+7, WorkplanTest 5, 2022/06/09 09:00, 2022/05/19 00:00, true
