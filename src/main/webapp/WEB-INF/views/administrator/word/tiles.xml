@@ -6,11 +6,11 @@
 
 <tiles-definitions>
 
-	<definition name="administrator/word/list" extends="master">
+	<definition name="administrator/word-class/list" extends="master">
 		<put-attribute name="body" type="template" value="../administrator/word/list.jsp" />
 	</definition>
 	
-	<definition name="administrator/word/form" extends="master">
+	<definition name="administrator/word-class/form" extends="master">
 		<put-attribute name="body" type="template" value="../administrator/word/form.jsp" />
 	</definition>
 </tiles-definitions>

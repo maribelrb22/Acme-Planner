@@ -13,7 +13,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/administrator/word/")
+@RequestMapping("/administrator/word-class/")
 public class AdministratorWordController extends AbstractController<Administrator, WordClass> {
 
 	// Internal state ---------------------------------------------------------
