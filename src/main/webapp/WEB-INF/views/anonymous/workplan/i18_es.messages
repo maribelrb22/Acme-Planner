@@ -10,3 +10,11 @@ anonymous.workplan.form.label.workload = Carga de trabajo
 anonymous.workplan.form.button.return = Return
 anonymous.workplan.form.label.title = Título
 anonymous.workplan.list.label.title = Título
+anonymous.workplan.form.label.executionPeriod = Periodo de ejecución
+
+anonymous.workplan.form.label.tasks.title= Título
+anonymous.workplan.form.label.tasks.id= Id
+anonymous.workplan.form.label.tasks= Tareas del plan de trabajo
+anonymous.workplan.form.label.tasks.public = Privacidad
+anonymous.workplan.form.label.tasks.public.true= Pública
+anonymous.workplan.form.label.tasks.public.false= Privada

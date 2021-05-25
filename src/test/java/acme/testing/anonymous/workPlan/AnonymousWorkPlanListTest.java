@@ -15,7 +15,8 @@ public class AnonymousWorkPlanListTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/workPlan/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listWorkPlan(final int recordIndex, final String title, final String begin, final String end, final String workload) {
+	public void listWorkPlan(final int recordIndex, final String title, final String begin, final String end, final String workload, 
+		final String executionPeriod) {
 		
 		super.clickOnMenu("Anonymous", "Workplan list");
 		
@@ -29,6 +30,6 @@ public class AnonymousWorkPlanListTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("begin", begin);
 		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
-		
+		super.checkInputBoxHasValue("executionPeriod", executionPeriod);
 	}
 }
