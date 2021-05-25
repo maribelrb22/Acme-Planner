@@ -136,6 +136,6 @@ public class Task extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Managers Managers;
+	protected Managers managers;
 
 }

@@ -26,14 +26,14 @@ public class ManagersTaskDeleteService implements AbstractDeleteService<Managers
 		final boolean result;
 		Task task;
 		int taskId;
-		Managers Managers;
+		Managers manager;
 		Principal principal;
 		
 		taskId=request.getModel().getInteger("id");
 		task=this.repository.findOneTaskById(taskId);
-		Managers = task.getManagers();
+		manager = task.getManagers();
 		principal = request.getPrincipal();
-		result = Managers.getUserAccount().getId() == principal.getAccountId();
+		result = manager.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 

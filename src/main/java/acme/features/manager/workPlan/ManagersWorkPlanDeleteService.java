@@ -23,14 +23,14 @@ public class ManagersWorkPlanDeleteService implements AbstractDeleteService<Mana
 		final boolean result;
 		WorkPlan workplan;
 		int workplanId;
-		Managers Managers;
+		Managers managers;
 		Principal principal;
 		
 		workplanId=request.getModel().getInteger("id");
 		workplan=this.repository.findWorkPlanById(workplanId);
-		Managers = workplan.getManagers();
+		managers = workplan.getManagers();
 		principal = request.getPrincipal();
-		result = Managers.getUserAccount().getId() == principal.getAccountId();
+		result = managers.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 

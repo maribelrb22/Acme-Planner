@@ -32,15 +32,15 @@ public class ManagersWorkPlanAddTaskService implements AbstractUpdateService<Man
 		final boolean result;
 		WorkPlan workplan;
 		int workplanId;
-		Managers Managers;
+		Managers managers;
 		Principal principal;
 		
 		workplanId=request.getModel().getInteger("id");
 		workplan=this.repository.findWorkPlanById(workplanId);
-		Managers = workplan.getManagers();
+		managers = workplan.getManagers();
 		principal = request.getPrincipal();
 		
-		result = (Managers.getUserAccount().getId() == principal.getAccountId());
+		result = (managers.getUserAccount().getId() == principal.getAccountId());
 		return result;
 	}
 
@@ -86,13 +86,13 @@ public class ManagersWorkPlanAddTaskService implements AbstractUpdateService<Man
 				(ls.stream().mapToDouble(Task::getExecutionPeriod).sum() + task.getExecutionPeriod()), "taskSelected", 
 				"Managers.workplan.form.addTask.error.executionPeriod");
 			
-			final Managers Managers = wp.getManagers();
+			final Managers manager = wp.getManagers();
 			final Principal principal = request.getPrincipal();
-			final Boolean itsMine = Managers.getUserAccount().getId() == principal.getAccountId();
+			final Boolean itsMine = manager.getUserAccount().getId() == principal.getAccountId();
 			final Boolean canPublish= itsMine && wp.getTasks().stream().filter(x-> x.getIsPublic().equals(false)).count() == 0 && !wp.getIsPublic();
 			
-			List<Task>taskList = this.repository.findTasksAvailable(Managers.getId(), wp.getId()).stream().filter(x->!wp.getTasks().contains(x)).collect(Collectors.toList());
-				taskList= taskList.stream().filter(x->x.getIsPublic()).collect(Collectors.toList());
+			List<Task>taskList = this.repository.findTasksAvailable(manager.getId(), wp.getId()).stream().filter(x->!wp.getTasks().contains(x)).collect(Collectors.toList());
+				taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
 			
 			request.getModel().setAttribute("ItsMine", itsMine);
 	        request.getModel().setAttribute("canPublish", canPublish);

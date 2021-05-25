@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import acme.testing.AcmePlannerTest;
 
 //We are testing list and show spam words
-public class ListShowWord extends AcmePlannerTest{
+public class TestListShowWord extends AcmePlannerTest{
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator.word/positiveList.csv", encoding = "utf-8", numLinesToSkip = 1)

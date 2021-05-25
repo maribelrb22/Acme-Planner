@@ -59,9 +59,9 @@ public class ManagersWorkPlanCreateService implements AbstractCreateService<Mana
 	public WorkPlan instantiate(final Request<WorkPlan> request) {
 		assert request != null;
 
-		final Managers Managers = this.repository.findOneManagersById(request.getPrincipal().getActiveRoleId());
+		final Managers managers = this.repository.findOneManagersById(request.getPrincipal().getActiveRoleId());
 		final WorkPlan workPlan = new WorkPlan();
-		workPlan.setManagers(Managers);
+		workPlan.setManagers(managers);
 		workPlan.setTasks(new ArrayList<Task>());
 		
 		return workPlan;
