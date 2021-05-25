@@ -1,5 +1,6 @@
 package acme.features.manager.workPlan;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,7 +21,7 @@ import acme.framework.services.AbstractShowService;
 public class ManagersWorkPlanShowService implements AbstractShowService<Managers, WorkPlan>{
 
     @Autowired
-    ManagersWorkPlanRepository ManagersWorkPlanRepository;
+    ManagersWorkPlanRepository managersWorkPlanRepository;
     
 	@Autowired
 	AnonymousTaskRepository taskRepository;
@@ -38,36 +39,37 @@ public class ManagersWorkPlanShowService implements AbstractShowService<Managers
         assert model != null;
         
         int workplanId = request.getModel().getInteger("id");
-		WorkPlan workplan = this.ManagersWorkPlanRepository.findWorkPlanById(workplanId);
-		Managers Managers = workplan.getManagers();
+		WorkPlan workplan = this.managersWorkPlanRepository.findWorkPlanById(workplanId);
+		Managers managers = workplan.getManagers();
 		Principal principal = request.getPrincipal();
-		Boolean itsMine = Managers.getUserAccount().getId() == principal.getAccountId();
+		Boolean itsMine = managers.getUserAccount().getId() == principal.getAccountId();
 		Boolean canPublish= itsMine && workplan.getTasks().stream().filter(x-> x.getIsPublic().equals(false)).count() == 0 && !workplan.getIsPublic();
 		//You can publish a workplan if you have created it and all tasks inside are public
 		
-		if(workplan.getTasks().size()>0) {
-			Date recommendedInitialDate = ManagersWorkPlanRepository.findInitialDateFirstTask(workplanId).get(0);
-			Date recommendedEndDate= ManagersWorkPlanRepository.findEndDateLastTask(workplanId).get(0);
+		if(!workplan.getTasks().isEmpty()) {
+			Date recommendedInitialDate = managersWorkPlanRepository.findInitialDateFirstTask(workplanId).get(0);
+			Date recommendedEndDate= managersWorkPlanRepository.findEndDateLastTask(workplanId).get(0);
 			
-			//Add or substract one day in miliseconds
-			recommendedInitialDate = new Date(recommendedInitialDate.getTime() - (1000 * 60 * 60 * 24));
-			recommendedInitialDate.setHours(8);
-			recommendedInitialDate.setMinutes(0);
+			final Calendar cal1 = Calendar.getInstance();
+            cal1.setTime(recommendedInitialDate);
+            cal1.add(Calendar.DAY_OF_MONTH, -1);
+            cal1.set(Calendar.HOUR, 8);
 
-			recommendedEndDate= new Date(recommendedEndDate.getTime() + (1000 * 60 * 60 * 24));
-			recommendedEndDate.setHours(17);
-			recommendedEndDate.setMinutes(0);
-
-			model.setAttribute("recommendedInitialDate", recommendedInitialDate.toString());
-			model.setAttribute("recommendedEndDate", recommendedEndDate.toString());
+            final Calendar cal2 = Calendar.getInstance();
+            cal2.setTime(recommendedEndDate);
+            cal2.add(Calendar.DAY_OF_MONTH, +1);
+            cal2.set(Calendar.HOUR, 17);
+			
+			request.getModel().setAttribute("recommendedInitialDate", cal1.getTime().toString());
+			request.getModel().setAttribute("recommendedEndDate", cal2.getTime().toString());
 		}
 		
-		List<Task>taskList = ManagersWorkPlanRepository.findTasksAvailable(Managers.getId(), workplanId).stream()
+		List<Task>taskList = managersWorkPlanRepository.findTasksAvailable(managers.getId(), workplanId).stream()
 				.filter(x->!workplan.getTasks().contains(x))
 				.collect(Collectors.toList());
 		
-		if(workplan.getIsPublic())//If workplan is public, only public tasks can be added
-			taskList= taskList.stream().filter(x->x.getIsPublic()).collect(Collectors.toList());
+		if(workplan.getIsPublic().booleanValue())//If workplan is public, only public tasks can be added
+			taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
 			
 		model.setAttribute("tasksEneabled", taskList);
         
@@ -82,7 +84,7 @@ public class ManagersWorkPlanShowService implements AbstractShowService<Managers
         WorkPlan result;
         int id;
         id = request.getModel().getInteger("id");
-        result = this.ManagersWorkPlanRepository.findWorkPlanById(id);
+        result = this.managersWorkPlanRepository.findWorkPlanById(id);
 
         return result;
 	}

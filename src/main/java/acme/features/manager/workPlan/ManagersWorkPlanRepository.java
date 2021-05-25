@@ -15,7 +15,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface ManagersWorkPlanRepository extends AbstractRepository {
 
-	@Query("select w from WorkPlan w where (w.isPublic=1 or w.Managers.id =?1)")
+	@Query("select w from WorkPlan w where (w.isPublic=1 or w.managers.id =?1)")
 	public Collection<WorkPlan>getAllWorkPlans(int id);
 	
 	@Query("select w from WorkPlan w where w.id =?1")
@@ -24,7 +24,7 @@ public interface ManagersWorkPlanRepository extends AbstractRepository {
 	@Query("select m from Managers m where m.id = ?1")
 	public Managers findOneManagersById(int activeRoleId);
 
-	@Query("select t from Task t where (t.isPublic=1 or t.Managers.id =?1)")
+	@Query("select t from Task t where (t.isPublic=1 or t.managers.id =?1)")
 	public Collection<Task> findTasksAvailable(int id, int idWP);
 	
 	@Query("select t.begin from WorkPlan w join w.tasks t where w.id=?1 order by t.begin asc" )

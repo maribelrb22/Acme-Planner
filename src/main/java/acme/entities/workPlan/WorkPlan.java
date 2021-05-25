@@ -50,7 +50,7 @@ public class WorkPlan extends DomainEntity{
 	@NotNull
 	@Valid
 	@ManyToOne(optional=false)
-	protected Managers Managers;
+	protected Managers managers;
 		
 	protected double workload;
 	

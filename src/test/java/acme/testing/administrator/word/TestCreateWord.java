@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import acme.testing.AcmePlannerTest;
 
 //We are testing positive and negative spam words creation
-public class CreateWord extends AcmePlannerTest {
+public class TestCreateWord extends AcmePlannerTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/administrator.word/positiveCreateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)

@@ -11,11 +11,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Word extends DomainEntity {
+public class WordClass extends DomainEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				word;
+	private String word;
 
 }
