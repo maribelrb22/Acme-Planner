@@ -22,14 +22,14 @@ public class ManagersTaskShowService implements AbstractShowService<Managers, Ta
 		final boolean result;
 		Task task;
 		int taskId;
-		Managers Managers;
+		Managers manager;
 		Principal principal;
 		
 		taskId=request.getModel().getInteger("id");
 		task=this.repository.findOneTaskById(taskId);
-		Managers = task.getManagers();
+		manager = task.getManagers();
 		principal = request.getPrincipal();
-		result = task.getIsPublic() ||!task.getIsPublic() && Managers.getUserAccount().getId() == principal.getAccountId();
+		result = task.getIsPublic() ||!task.getIsPublic() && manager.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 

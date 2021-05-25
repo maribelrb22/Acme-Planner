@@ -12,7 +12,7 @@ public class AnonymousShoutListAllTest extends AcmePlannerTest {
 	// Lifecycle management ---------------------------------------------------
 
 	// Test cases -------------------------------------------------------------
-	//This test shows every shout in the data base
+	//This test case checks the correct listing of every shout in the data base checking every column of the table
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/list-all.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

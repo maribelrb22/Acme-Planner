@@ -15,7 +15,7 @@ import acme.framework.services.AbstractListService;
 public class ManagersWorkPlanListService  implements AbstractListService<Managers, WorkPlan>{
 
     @Autowired
-    ManagersWorkPlanRepository ManagersWorkPlanRepository;
+    ManagersWorkPlanRepository managersWorkPlanRepository;
 	
 	@Override
 	public boolean authorise(Request<WorkPlan> request) {
@@ -36,7 +36,7 @@ public class ManagersWorkPlanListService  implements AbstractListService<Manager
 	@Override
 	public Collection<WorkPlan> findMany(Request<WorkPlan> request) {
 		assert request!=null;
-		return ManagersWorkPlanRepository.getAllWorkPlans(request.getPrincipal().getActiveRoleId());
+		return managersWorkPlanRepository.getAllWorkPlans(request.getPrincipal().getActiveRoleId());
 	}
 
 }

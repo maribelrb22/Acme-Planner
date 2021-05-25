@@ -9,7 +9,7 @@ public class AuthenticatedConsumerUpdateTest extends AcmePlannerTest {
 	
 	// This test case check that the data consumer can be modified
     @ParameterizedTest
-    @CsvFileSource(resources = "/authenticated.consumer/positive-update.csv", encoding = "utf-8", numLinesToSkip = 1)    @Order(10)
+    @CsvFileSource(resources = "/authenticated/consumer/positive-update.csv", encoding = "utf-8", numLinesToSkip = 1)    @Order(10)
     public void positiveUpdateConsumer(final String company, final String sector) {
         super.signUp("Consumer1", "Consumer1", "Consumer", "One", "Consumer@mail.com", "");
         super.signIn("Consumer1", "Consumer1");
@@ -30,7 +30,7 @@ public class AuthenticatedConsumerUpdateTest extends AcmePlannerTest {
 
     // This test case check that the data consumer can't be modified because of empty fields
     @ParameterizedTest
-    @CsvFileSource(resources = "/authenticated.consumer/negative-update.csv", encoding = "utf-8", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/authenticated/consumer/negative-update.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(20)
     public void negativeUpdateConsumer(final String company, final String sector) {
 

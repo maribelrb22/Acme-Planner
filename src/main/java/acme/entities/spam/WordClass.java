@@ -1,3 +1,4 @@
+
 package acme.entities.spam;
 
 import javax.persistence.Entity;
@@ -10,11 +11,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Word extends DomainEntity {
+public class WordClass extends DomainEntity {
 
-    protected static final long serialVersionUID = 1L;
+	protected static final long	serialVersionUID	= 1L;
 
-    @NotBlank
-    private String word;
-    
+	@NotBlank
+	private String word;
+
 }

@@ -18,8 +18,8 @@ Managers.task.form.error.must-be-in-future = La fecha debe estar en el futuro
 Managers.task.form.error.must-be-less-than-work-period = La carga de trabajo debe ser menor al periodo de ejecución
 Managers.task.form.error.decimal-must-be-under-60 = El número decimal debe ser menor a 60
 Managers.task.form.error.spam = Tu texto es considerado spam, por favor, usa un vocabulario adecuado
-Managers.task.form.error.must-be-after-begin = La fecha de fin debe ser posterior a la fecha de fin
-Managers.task.form.error.worPlan-public = Esta tarea pertenece a un plan de trabajo publico
+Managers.task.form.error.must-be-after-begin = La fecha de fin debe ser posterior a la fecha de inicio
+Managers.task.form.error.worPlan-public = Esta tarea pertenece a un plan de trabajo público
 
 Managers.task.form.button.return = Volver
 Managers.task.form.button.create = Crear

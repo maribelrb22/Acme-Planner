@@ -31,14 +31,14 @@ public class ManagersTaskUpdateService implements AbstractUpdateService<Managers
 		final boolean result;
 		Task task;
 		int taskId;
-		Managers Managers;
+		Managers manager;
 		Principal principal;
 		
 		taskId=request.getModel().getInteger("id");
 		task=this.repository.findOneTaskById(taskId);
-		Managers = task.getManagers();
+		manager = task.getManagers();
 		principal = request.getPrincipal();
-		result = Managers.getUserAccount().getId() == principal.getAccountId();
+		result = manager.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 
@@ -101,8 +101,8 @@ public class ManagersTaskUpdateService implements AbstractUpdateService<Managers
 		if(!errors.hasErrors("begin")&&!errors.hasErrors("end")) {
 			entity.setExecutionPeriod();
 			final double periodo = entity.getExecutionPeriod(); 
-			errors.state(request, periodo>entity.getWorkload(), "workload", "Managers.task.form.error.must-be-less-than-work-period");
-			errors.state(request, periodo>entity.getWorkload(), "workload", "("+periodo+")");
+			errors.state(request, periodo>=entity.getWorkload(), "workload", "Managers.task.form.error.must-be-less-than-work-period");
+			errors.state(request, periodo>=entity.getWorkload(), "workload", "("+periodo+")");
 		}
 			errors.state(request, 0.59>=dec, "workload", "Managers.task.form.error.decimal-must-be-under-60");
 			errors.state(request, !titleSpam, "title", "Managers.task.form.error.spam");

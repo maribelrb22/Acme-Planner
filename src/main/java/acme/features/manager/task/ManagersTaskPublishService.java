@@ -27,14 +27,14 @@ public class ManagersTaskPublishService implements AbstractUpdateService<Manager
 		final boolean result;
 		Task task;
 		int taskId;
-		Managers Managers;
+		Managers manager;
 		Principal principal;
 		
 		taskId=request.getModel().getInteger("id");
 		task=this.repository.findOneTaskById(taskId);
-		Managers = task.getManagers();
+		manager = task.getManagers();
 		principal = request.getPrincipal();
-		result = Managers.getUserAccount().getId() == principal.getAccountId();
+		result = manager.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 
@@ -75,7 +75,7 @@ public class ManagersTaskPublishService implements AbstractUpdateService<Manager
 		assert errors != null;
 		if(entity.getIsPublic().equals(true)) {
 			final int workPlansPublic=this.repository.findNumberOfPublicWorkPlansByTaskId(entity.getId());
-			errors.state(request, workPlansPublic<=0, "title", "Managers.task.form.error.worPlan-public");
+			errors.state(request, workPlansPublic==0, "title", "Managers.task.form.error.worPlan-public");
 		}
 	}
 

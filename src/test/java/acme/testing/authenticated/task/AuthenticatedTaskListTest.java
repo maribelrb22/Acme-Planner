@@ -40,6 +40,8 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest{
 			super.checkInputBoxHasValue("workload", workload);
 			super.checkInputBoxHasValue("executionPeriod", executionPeriod);
 			
+			super.signOut();
+			
 		}
 
 }

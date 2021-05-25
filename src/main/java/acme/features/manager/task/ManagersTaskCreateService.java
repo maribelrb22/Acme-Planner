@@ -56,9 +56,9 @@ public class ManagersTaskCreateService implements AbstractCreateService<Managers
 
 		Task result;
 		
-		final Managers Managers = this.repository.findOneManagersById(request.getPrincipal().getActiveRoleId());
+		final Managers manager = this.repository.findOneManagersById(request.getPrincipal().getActiveRoleId());
 		result = new Task();
-		result.setManagers(Managers);
+		result.setManagers(manager);
 
 		return result;
 	}
@@ -92,8 +92,8 @@ public class ManagersTaskCreateService implements AbstractCreateService<Managers
 		if(!errors.hasErrors("begin")&&!errors.hasErrors("end")) {
 			entity.setExecutionPeriod();
 			final double periodo = entity.getExecutionPeriod(); 
-			errors.state(request, periodo>entity.getWorkload(), "workload", "Managers.task.form.error.must-be-less-than-work-period");
-			errors.state(request, periodo>entity.getWorkload(), "workload", "("+periodo+")");
+			errors.state(request, periodo>=entity.getWorkload(), "workload", "Managers.task.form.error.must-be-less-than-work-period");
+			errors.state(request, periodo>=entity.getWorkload(), "workload", "("+periodo+")");
 		}
 			errors.state(request, 0.59>=dec, "workload", "Managers.task.form.error.decimal-must-be-under-60");
 			errors.state(request, !titleSpam, "title", "Managers.task.form.error.spam");

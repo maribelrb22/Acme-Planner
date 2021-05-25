@@ -12,14 +12,14 @@
 - they accept any liabilities with respect to them.
 -->
 
-<beans 
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>
-	
+
 	<!-- Anonymous user -->
 
 	<bean name="anonymousUserAccount" class="acme.framework.entities.UserAccount">
@@ -43,10 +43,10 @@
 	<bean name="anonymousAnonymous" class="acme.framework.entities.Anonymous">
 		<property name="userAccount" ref="anonymousUserAccount" />
 	</bean>
-	
+
 
 	<!-- Administrators -->
-	
+
 	<bean name="administratorUserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="administrator" />
 		<property name="password" value="administrator" />
@@ -69,70 +69,70 @@
 	<bean name="administratorAdministrator" class="acme.framework.entities.Administrator">
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
-	
+
 	<bean name="administratorAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
-		<bean name="word1" class="acme.entities.spam.Word">
+	<bean name="word1" class="acme.entities.spam.WordClass">
 		<property name="word" value = "Nigeria"/>
 	</bean>
 
-	<bean name="word2" class="acme.entities.spam.Word">
+	<bean name="word2" class="acme.entities.spam.WordClass">
 		<property name="word" value = "sexo"/>
 	</bean>
 
-	<bean name="word3" class="acme.entities.spam.Word">
+	<bean name="word3" class="acme.entities.spam.WordClass">
 		<property name="word" value = "sex"/>
 	</bean>
 
-	<bean name="word4" class="acme.entities.spam.Word">
+	<bean name="word4" class="acme.entities.spam.WordClass">
 		<property name="word" value = "hardcore"/>
 	</bean>
 
-	<bean name="word5" class="acme.entities.spam.Word">
+	<bean name="word5" class="acme.entities.spam.WordClass">
 		<property name="word" value = "Viagra"/>
 	</bean>
 
-	<bean name="word6" class="acme.entities.spam.Word">
+	<bean name="word6" class="acme.entities.spam.WordClass">
 		<property name="word" value = "Cialis"/>
 	</bean>
 
-	<bean name="word7" class="acme.entities.spam.Word">
+	<bean name="word7" class="acme.entities.spam.WordClass">
 		<property name="word" value = "Has ganado"/>
 	</bean>
 
-	<bean name="word8" class="acme.entities.spam.Word">
+	<bean name="word8" class="acme.entities.spam.WordClass">
 		<property name="word" value = "You've won"/>
 	</bean>
 
-	<bean name="word9" class="acme.entities.spam.Word">
+	<bean name="word9" class="acme.entities.spam.WordClass">
 		<property name="word" value = "You have won"/>
 	</bean>
 
-	<bean name="word10" class="acme.entities.spam.Word">
+	<bean name="word10" class="acme.entities.spam.WordClass">
 		<property name="word" value = "Millon de euros"/>
 	</bean>
 
-	<bean name="word11" class="acme.entities.spam.Word">
+	<bean name="word11" class="acme.entities.spam.WordClass">
 		<property name="word" value = "Million dollars"/>
 	</bean>
-	
+
 	<bean name="spam1" class="acme.entities.spam.Spam">
 		<property name="spamWords" >
-				<list>
-					<ref bean="word1" />
-					<ref bean="word2" />
-					<ref bean="word3" />
-					<ref bean="word4" />
-					<ref bean="word5" />
-					<ref bean="word6" />
-					<ref bean="word7" />
-					<ref bean="word8" />
-					<ref bean="word9" />
-					<ref bean="word10" />
-					<ref bean="word11" />
-				</list>
-			</property>
+			<list>
+				<ref bean="word1" />
+				<ref bean="word2" />
+				<ref bean="word3" />
+				<ref bean="word4" />
+				<ref bean="word5" />
+				<ref bean="word6" />
+				<ref bean="word7" />
+				<ref bean="word8" />
+				<ref bean="word9" />
+				<ref bean="word10" />
+				<ref bean="word11" />
+			</list>
+		</property>
 		<property name="threshold" value="10." />
 	</bean>
 </beans>

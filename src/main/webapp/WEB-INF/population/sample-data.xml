@@ -140,12 +140,13 @@
 		<property name="Managers" ref="Managers2Managers" />
 	</bean>
 	<bean id="task07" class="acme.entities.tasks.Task">
-		<property name="title" value="task7" />
-		<property name="begin" value="2025/10/27 10:00" />
-		<property name="end" value="2025/10/27 12:00" />
-		<property name="description" value="The principals of the system can be either anonymous users." />
-		<property name="link" value="http://www.example.com" />
-		<property name="isPublic" value="false" />
+
+		<property name="title" value="task7"/>
+		<property name="begin" value="2025/10/27 10:00"/>
+		<property name="end" value="2025/10/27 12:00"/>
+		<property name="description" value="The principals of the system can be either anonymous users."/>
+		<property name="link" value="http://www.example.com"/>
+		<property name="isPublic" value="true"/>
 		<property name="workload" value="0.45" />
 		<property name="executionPeriod" value="2.0" />
 		<property name="Managers" ref="Managers2Managers" />

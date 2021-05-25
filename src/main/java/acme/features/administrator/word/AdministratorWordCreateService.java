@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.spam.Spam;
-import acme.entities.spam.Word;
+import acme.entities.spam.WordClass;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -16,7 +16,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.services.SpamService;
 
 @Service
-public class AdministratorWordCreateService implements AbstractCreateService<Administrator, Word> {
+public class AdministratorWordCreateService implements AbstractCreateService<Administrator, WordClass> {
 
 	@Autowired
 	protected AdministratorWordRepository	repository;
@@ -26,13 +26,13 @@ public class AdministratorWordCreateService implements AbstractCreateService<Adm
 
 
 	@Override
-	public boolean authorise(final Request<Word> request) {
+	public boolean authorise(final Request<WordClass> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void bind(final Request<Word> request, final Word entity, final Errors errors) {
+	public void bind(final Request<WordClass> request, final WordClass entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -41,7 +41,7 @@ public class AdministratorWordCreateService implements AbstractCreateService<Adm
 	}
 
 	@Override
-	public void unbind(final Request<Word> request, final Word entity, final Model model) {
+	public void unbind(final Request<WordClass> request, final WordClass entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -50,33 +50,33 @@ public class AdministratorWordCreateService implements AbstractCreateService<Adm
 	}
 
 	@Override
-	public Word instantiate(final Request<Word> request) {
+	public WordClass instantiate(final Request<WordClass> request) {
 		assert request != null;
-		Word result;
+		WordClass result;
 
-		result = new Word();
+		result = new WordClass();
 		result.setWord("Word");
 
 		return result;
 	}
 
 	@Override
-	public void validate(final Request<Word> request, final Word entity, final Errors errors) {
+	public void validate(final Request<WordClass> request, final WordClass entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
-		final boolean spam = this.spamService.isItSpam(entity.getWord());
-		errors.state(request, spam == false, "word", "administrator.word.form.error.exists");
+		final boolean spam = this.spamService.isASpamWord(entity.getWord());
+		errors.state(request, Boolean.FALSE.equals(spam), "word", "administrator.word.form.error.exists");
 
 	}
 
 	@Override
-	public void create(final Request<Word> request, final Word entity) {
+	public void create(final Request<WordClass> request, final WordClass entity) {
 		assert request != null;
 		assert entity != null;
 		final Spam spam = this.repository.findSpam();
-		final Collection<Word> spamWords = spam.getSpamWords();
+		final Collection<WordClass> spamWords = spam.getSpamWords();
 		spamWords.add(entity);
 		this.repository.save(entity);
 

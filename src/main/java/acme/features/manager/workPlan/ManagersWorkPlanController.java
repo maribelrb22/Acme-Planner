@@ -17,43 +17,43 @@ import acme.framework.controllers.AbstractController;
 public class ManagersWorkPlanController extends AbstractController<Managers, WorkPlan> {
 	
 	@Autowired
-	protected ManagersWorkPlanListService ManagersWorkPlanListService;
+	protected ManagersWorkPlanListService managersWorkPlanListService;
 	
 	@Autowired
-	protected ManagersWorkPlanShowService ManagersWorkPlanShowService;
+	protected ManagersWorkPlanShowService managersWorkPlanShowService;
 	
 	@Autowired
-	protected ManagersWorkPlanCreateService ManagersWorkPlanCreateService;
+	protected ManagersWorkPlanCreateService managersWorkPlanCreateService;
 	
 	@Autowired
-	protected ManagersWorkPlanDeleteService ManagersWorkPlanDeleteService;
+	protected ManagersWorkPlanDeleteService managersWorkPlanDeleteService;
 	
 	@Autowired 
-	protected ManagersWorkPlanPublishService ManagersWorkPlanPublishService;
+	protected ManagersWorkPlanPublishService managersWorkPlanPublishService;
 	
 	@Autowired 
-	protected ManagersWorkPlanEditService ManagersWorkPlanEditService;
+	protected ManagersWorkPlanEditService managersWorkPlanEditService;
 	
 	@Autowired
-	protected ManagersWorkPlanAddTaskService ManagersWorkPlanAddTaskService;
+	protected ManagersWorkPlanAddTaskService managersWorkPlanAddTaskService;
 	
 	@Autowired
-	protected ManagersWorkPlanRemoveTaskService ManagersWorkPlanRemoveTaskService;
+	protected ManagersWorkPlanRemoveTaskService managersWorkPlanRemoveTaskService;
 	
 	@Autowired
-	protected ManagersWorkPlanPrivatizeService ManagersWorkPlanPrivatizeService;
+	protected ManagersWorkPlanPrivatizeService managersWorkPlanPrivatizeService;
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.ManagersWorkPlanListService);
-		super.addBasicCommand(BasicCommand.SHOW, this.ManagersWorkPlanShowService);
-		super.addBasicCommand(BasicCommand.CREATE, this.ManagersWorkPlanCreateService);
-		super.addBasicCommand(BasicCommand.DELETE,this.ManagersWorkPlanDeleteService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.ManagersWorkPlanEditService);
-		super.addCustomCommand(CustomCommand.PUBLISH, BasicCommand.UPDATE, this.ManagersWorkPlanPublishService);
-		super.addCustomCommand(CustomCommand.ADD_TASK, BasicCommand.UPDATE, this.ManagersWorkPlanAddTaskService);
-		super.addCustomCommand(CustomCommand.REMOVE_TASK, BasicCommand.UPDATE, this.ManagersWorkPlanRemoveTaskService);
-		super.addCustomCommand(CustomCommand.PRIVATIZE, BasicCommand.UPDATE, this.ManagersWorkPlanPrivatizeService);
+		super.addBasicCommand(BasicCommand.LIST, this.managersWorkPlanListService);
+		super.addBasicCommand(BasicCommand.SHOW, this.managersWorkPlanShowService);
+		super.addBasicCommand(BasicCommand.CREATE, this.managersWorkPlanCreateService);
+		super.addBasicCommand(BasicCommand.DELETE,this.managersWorkPlanDeleteService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.managersWorkPlanEditService);
+		super.addCustomCommand(CustomCommand.PUBLISH, BasicCommand.UPDATE, this.managersWorkPlanPublishService);
+		super.addCustomCommand(CustomCommand.ADD_TASK, BasicCommand.UPDATE, this.managersWorkPlanAddTaskService);
+		super.addCustomCommand(CustomCommand.REMOVE_TASK, BasicCommand.UPDATE, this.managersWorkPlanRemoveTaskService);
+		super.addCustomCommand(CustomCommand.PRIVATIZE, BasicCommand.UPDATE, this.managersWorkPlanPrivatizeService);
 	}
 
 
