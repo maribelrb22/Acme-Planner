@@ -14,7 +14,7 @@
 // HINT+ saves a lot of work and mistakes when specifying the i18n message bundles. The
 // HINT+ default extension of the bundles was changed to ".messages", which seems more
 // HINT+ intuitive than the generic ".properties" extension. The ".xml" extension is not
-// HINT+ supports at all. The changes are marked with RC+ or RC- blocks in the source code.
+// HINT+ supported at all. The changes are marked with RC+ or RC- blocks in the source code.
 
 package acme.framework.patches;
 
@@ -34,7 +34,19 @@ package acme.framework.patches;
  * limitations under the License.
  */
 
-import acme.framework.helpers.StringHelper;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.locks.ReentrantLock;
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.context.support.AbstractResourceBasedMessageSource;
@@ -49,14 +61,7 @@ import org.springframework.util.DefaultPropertiesPersister;
 import org.springframework.util.PropertiesPersister;
 import org.springframework.util.StringUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.MessageFormat;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.locks.ReentrantLock;
+import acme.framework.helpers.StringHelper;
 
 /**
  * Spring-specific {@link org.springframework.context.MessageSource} implementation
