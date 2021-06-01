@@ -1,5 +1,6 @@
 package acme.testing.manager.workplan;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -17,22 +18,16 @@ public class ManagerWorkPlanDeleteTest extends AcmePlannerTest {
 			final String workload, final String executionPeriod) {
 
 		super.signIn("Managers1", "Managers1");
-		super.navigate("managers/work-plan/show", String.format("id=%d", id));
-
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("workload", workload);
-		super.checkInputBoxHasValue("executionPeriod", executionPeriod);
-		super.checkInputBoxHasValue("begin", begin);
-		super.checkInputBoxHasValue("end", end);
-
-		super.clickOnSubmitButton("Delete");
-
-		super.navigate("managers/work-plan/show", String.format("id=%d", id));
-
-		super.checkErrorsExist();
-		super.navigateHome();
-
-		super.signOut();
+        super.clickOnMenu("Managers","Workplan list");
+        super.clickOnListingRecord(0);
+        super.checkInputBoxHasValue("title", title);
+        super.checkInputBoxHasValue("workload", workload);
+        super.checkInputBoxHasValue("executionPeriod", executionPeriod);
+        super.checkInputBoxHasValue("begin", begin);
+        super.checkInputBoxHasValue("end", end);
+        super.clickOnSubmitButton("Delete");
+        Assertions.assertFalse(title.equals(this.getListingRecord(0).get(1).getText()));
+        super.signOut();
 	}
 
 }
