@@ -18,7 +18,7 @@
 
 <!-- Comparo la url para saber si estoy en los gritos recientes o en los que se muestran todos -->
 <%
-	if(request.getAttribute("javax.servlet.forward.request_uri").toString().equals("/Acme-One/anonymous/shout/list_recent")){
+	if(request.getAttribute("javax.servlet.forward.request_uri").toString().equals("/Acme-Planner/anonymous/shout/list_recent")){
 %>
 	<acme:form>
     	<acme:form-return action="/anonymous/shout/list" code="anonymous.shout.list.button.all" />
