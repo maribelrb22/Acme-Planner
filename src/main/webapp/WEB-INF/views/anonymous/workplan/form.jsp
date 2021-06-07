@@ -32,7 +32,7 @@
 				<tr class="table-light">
 					<td></td>
 					<td>${task.id}</td>
-					<td>${task.title}</td>
+					<td><c:out value="${task.title}"/></td>
 					<td><acme:message code="anonymous.workplan.form.label.tasks.public.${task.isPublic}" /></td>
 					<td></td>
 				</tr>
