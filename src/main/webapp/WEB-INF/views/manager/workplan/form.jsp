@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <acme:form readonly="${!ItsMine}">
@@ -64,7 +65,7 @@
 					  	<tr class="table-light">
 					      <td></td>
 					      <td>${task.id}</td>
-					      <td>${task.title}</td>
+					      <td><c:out value="${task.title}"/></td>
 					      <td><acme:message code="Managers.workplan.form.label.tasks.public.${task.isPublic}"/></td>
 					      <td>
 					      <jstl:if test="${ItsMine}">
@@ -87,8 +88,10 @@
 	<center>
 	<acme:form>
 		<acme:form-select code="Managers.workplan.form.select.addTask" path="taskSelected">
-			<c:forEach items="${tasksEneabled}" var="task">
-				<acme:form-option code="${task.title} - ${task.description}" value="${task.id}"/>	
+			<c:forEach items="${tasksEneabled}" var="task">	
+				<option value="${task.id}">
+					<c:out value="${task.title} - ${task.description}"/>
+				</option>
 			</c:forEach>
 		</acme:form-select>
 		<acme:form-submit code="Managers.workplan.form.button.addTask" action="/managers/work-plan/add_task"/>
