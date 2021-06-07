@@ -10,7 +10,7 @@ import acme.testing.AcmePlannerTest;
 public class TestListShowWord extends AcmePlannerTest{
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/administrator.word/positiveList.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/word/positiveList.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveListShow(final int index, final String word) {
 		super.signIn("administrator","administrator");

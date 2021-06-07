@@ -16,7 +16,7 @@ public class TestDeleteWord extends AcmePlannerTest {
 	//y asi comprobar que se elimina correctamente. Siempre es la posición 0 de la lista ya que se van actualizando sus
 	//posiciones una vez eliminada una palabra.
 	@ParameterizedTest
-	@CsvFileSource(resources = "/administrator.word/positiveList.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/word/positiveList.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveDeleteShow(final int index, final String word) {
 		super.signIn("administrator","administrator");

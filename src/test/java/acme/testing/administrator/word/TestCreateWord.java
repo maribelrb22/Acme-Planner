@@ -13,7 +13,7 @@ import acme.testing.AcmePlannerTest;
 //We are testing positive and negative spam words creation
 public class TestCreateWord extends AcmePlannerTest {
     @ParameterizedTest
-    @CsvFileSource(resources = "/administrator.word/positiveCreateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/administrator/word/positiveCreateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
     public void PositiveCreateWord(final String word, final int recordIndex) {
         super.signIn("administrator", "administrator");
@@ -29,7 +29,7 @@ public class TestCreateWord extends AcmePlannerTest {
     }
     
     @ParameterizedTest
-    @CsvFileSource(resources = "/administrator.word/negativeCreateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/administrator/word/negativeCreateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(20)
     public void NegativeCreateWord(final String word) {
         super.signIn("administrator", "administrator");
