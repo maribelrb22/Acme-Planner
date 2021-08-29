@@ -57,7 +57,7 @@
 	</bean>
 
 	<bean id="shout06" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/16 10:25" />
+		<property name="moment" value="2021/08/28 10:25" />
 		<property name="author" value="Frank Cyrus" />
 		<property name="text" value="Bored!" />
 		<property name="info">
@@ -66,7 +66,7 @@
 	</bean>
 
 	<bean id="shout07" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/16 10:37" />
+		<property name="moment" value="2021/08/28 10:37" />
 		<property name="author" value="Javier Decuca" />
 		<property name="text" value="I'm Hacker!" />
 		<property name="info" value="https://twitter.com" />

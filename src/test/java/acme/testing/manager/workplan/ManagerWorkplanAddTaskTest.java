@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
 //adding a task to a workplan and expecting it doesn't work cause it doesn't fit the workload
-public class ManagerWorkplanAddTaskTest extends AcmePlannerTest {
+public class ManagerWorkplanAddTaskTest extends AcmeWorkPlansTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/manager/workplan/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)

@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AuthenticatedManagerUpdateTest extends AcmePlannerTest {
+public class AuthenticatedManagerUpdateTest extends AcmeWorkPlansTest {
 
 	// This test case check that the data manager can be modified
 	@ParameterizedTest

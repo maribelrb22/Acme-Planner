@@ -18,10 +18,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Acme Planner</name>
-	<description>This is my first project in Design &amp; Testing.</description>
+	<name>Acme-Work-Plans</name>
+	<description>This is my first project in Design and Testing.</description>
 
-	<artifactId>Acme-Planner</artifactId>
+	<artifactId>Acme-Work-Plans</artifactId>
 	<version>21.2</version>
 	<packaging>war</packaging>
 

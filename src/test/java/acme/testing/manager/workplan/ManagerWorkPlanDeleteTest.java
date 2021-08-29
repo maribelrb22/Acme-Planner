@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanDeleteTest extends AcmePlannerTest {
+public class ManagerWorkPlanDeleteTest extends AcmeWorkPlansTest {
 
 	// This test case check that a manager is able to delete a workplan created by
 	// him

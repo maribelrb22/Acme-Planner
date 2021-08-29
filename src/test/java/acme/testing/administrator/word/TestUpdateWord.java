@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
 //We are testing positive and negative cases for editing spam words
-public class TestUpdateWord extends AcmePlannerTest{
+public class TestUpdateWord extends AcmeWorkPlansTest{
     @ParameterizedTest
     @CsvFileSource(resources = "/administrator/word/positiveUpdateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)

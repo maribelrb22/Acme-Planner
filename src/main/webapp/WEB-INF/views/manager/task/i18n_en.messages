@@ -20,6 +20,7 @@ Managers.task.form.error.decimal-must-be-under-60 = Decimal must be under 60
 Managers.task.form.error.spam = Your text is considered spam, please, use a proper vocabulary
 Managers.task.form.error.must-be-after-begin = End must be after begin
 Managers.task.form.error.worPlan-public = This task belongs to a public work plan
+Managers.task.form.error.error-fecha= The number of hours must be between 0 and 99
 
 Managers.task.form.button.return = Return
 Managers.task.form.button.create = Create

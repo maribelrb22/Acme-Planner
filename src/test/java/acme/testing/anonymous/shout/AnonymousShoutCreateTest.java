@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AnonymousShoutCreateTest extends AcmePlannerTest {
+public class AnonymousShoutCreateTest extends AcmeWorkPlansTest {
 	// Lifecycle management ---------------------------------------------------
 
 	// Test cases -------------------------------------------------------------
@@ -16,8 +16,9 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void createPositive(final int recordIndex, final String moment, final String author, final String text, final String info) {
-		super.clickOnMenu("Anonymous", "Create shout");
 		
+		super.clickOnMenu("Anonymous", "Create shout");
+				
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("info", info);

@@ -16,7 +16,7 @@ master.banner.background = #B498EB
 
 master.welcome.title = Welcome!
 master.welcome.text = \
-	Welcome to Acme Planner! Your first project in D&T
+	Welcome to Acme Work-Plans! Your first project in D&T
 
 # master.menu #################################################################
 
@@ -90,12 +90,12 @@ master.footer.label.spanish = Spanish
 
 # master.company ##############################################################
 
-master.company.title = dp2-2021-g1-01
+master.company.title = dp2-2021-g1-23
 master.company.text = \
-	Acme-Planner G1-01, Inc. is a fictitious company that provides a \
+	Acme Work-Plans G1-23, Inc. is a fictitious company that provides a \
 	starter project for the students of the Design and Testing subject of the \
 	Software Engineering Curriculum of the University of Sevilla.
-master.company.name = Acme-Planner G1-01, Inc.
+master.company.name = Acme Work-Plans G1-23, Inc.
 master.company.address = Calle Romeo de Julieta, 15, Sevilla, Sevilla, España
 master.company.phone = +34 639 654 355
 master.company.email = g101projects@acme.com

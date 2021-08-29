@@ -1,11 +1,11 @@
 package acme.testing.authenticated.consumer;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class AuthenticatedConsumerUpdateTest extends AcmePlannerTest {
+public class AuthenticatedConsumerUpdateTest extends AcmeWorkPlansTest {
 	
 	// This test case check that the data consumer can be modified
     @ParameterizedTest

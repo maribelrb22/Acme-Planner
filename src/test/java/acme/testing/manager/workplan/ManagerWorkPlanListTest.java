@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanListTest extends AcmePlannerTest {
+public class ManagerWorkPlanListTest extends AcmeWorkPlansTest {
 
 	// This test case check that if you enter as manager in workPlan list, the
 	// columns and the type of the different input boxes found are the expected.

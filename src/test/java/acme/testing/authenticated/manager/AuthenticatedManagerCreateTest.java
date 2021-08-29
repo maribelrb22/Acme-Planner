@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AuthenticatedManagerCreateTest extends AcmePlannerTest{
+public class AuthenticatedManagerCreateTest extends AcmeWorkPlansTest{
 	
 	// This test case check that the input boxes are empty, so the authenticated can't become manager and system throws error.
 	@ParameterizedTest

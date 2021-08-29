@@ -20,6 +20,7 @@ Managers.task.form.error.decimal-must-be-under-60 = El número decimal debe ser 
 Managers.task.form.error.spam = Tu texto es considerado spam, por favor, usa un vocabulario adecuado
 Managers.task.form.error.must-be-after-begin = La fecha de fin debe ser posterior a la fecha de inicio
 Managers.task.form.error.worPlan-public = Esta tarea pertenece a un plan de trabajo público
+Managers.task.form.error.error-fecha= El número de horas debe estar entre 0 y 99
 
 Managers.task.form.button.return = Volver
 Managers.task.form.button.create = Crear

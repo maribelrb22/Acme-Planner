@@ -2,4 +2,3 @@ recordIndex,title,begin,end,description,link,isPublic,workload,executionPeriod
 0,task3,2021/11/13 09:00,2021/12/13 09:00,The principals of the system can be either anonymous users.,http://www.example.com,true,55.30,720.00
 1,task4,2021/11/09 07:00,2021/11/09 08:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.30,1.00
 2,task7,2025/10/27 10:00,2025/10/27 12:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.45,2.00
-3,task10,2021/08/20 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.25,1.00

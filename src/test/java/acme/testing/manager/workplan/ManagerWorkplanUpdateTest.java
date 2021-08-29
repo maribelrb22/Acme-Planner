@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkplanUpdateTest extends AcmePlannerTest {
+public class ManagerWorkplanUpdateTest extends AcmeWorkPlansTest {
     //We are updating an existing workplan with correct data
     @ParameterizedTest
     @CsvFileSource(resources = "/manager/workplan/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)

@@ -8,9 +8,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebElement;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class TestDeleteWord extends AcmePlannerTest {
+public class TestDeleteWord extends AcmeWorkPlansTest {
 	
 	//Pruebo que al borrar una spam word, la que sustituye su posicion en la lista no es la misma que la borrada,
 	//y asi comprobar que se elimina correctamente. Siempre es la posición 0 de la lista ya que se van actualizando sus

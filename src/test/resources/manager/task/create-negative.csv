@@ -12,3 +12,7 @@ recordIndex,title,begin,end,description,link,isPublic,workload
 3,task10,2021/08/20 09:00,2021/08/20 10:00,Sexo en Nigeria,http://www.example.com,true,0.10,1.00
 3,task10,2021/08/20 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,1.01
 3,t,2021/08/21 09:00,2021/08/20 10:00,The principals of the system can be either anonymous users.,http://www.example.com,true,0.40
+3,task18,2022/07/20 11:00,2022/07/30 11:00,The principals of the system can be either anonymous users.,http://www.example.com,false,99.60
+3,task18,2022/07/20 11:00,2022/07/30 11:00,The principals of the system can be either anonymous users.,http://www.example.com,false,0.00
+3,task18,2022/07/20 11:00,2022/07/30 11:00,The principals of the system can be either anonymous users.,http://www.example.com,false,-100.00
+3,task18,2022/07/20 11:00,2022/07/30 11:00,The principals of the system can be either anonymous users.,http://www.example.com,false,100.60

@@ -5,9 +5,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorThresholdUpdateResetTest extends AcmePlannerTest{
+public class AdministratorThresholdUpdateResetTest extends AcmeWorkPlansTest{
 
     // Lifecycle management ---------------------------------------------------
 	

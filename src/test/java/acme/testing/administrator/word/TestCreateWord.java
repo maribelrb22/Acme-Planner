@@ -8,10 +8,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebElement;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
 //We are testing positive and negative spam words creation
-public class TestCreateWord extends AcmePlannerTest {
+public class TestCreateWord extends AcmeWorkPlansTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/administrator/word/positiveCreateWord.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)

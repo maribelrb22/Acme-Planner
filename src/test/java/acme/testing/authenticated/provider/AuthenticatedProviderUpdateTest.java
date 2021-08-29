@@ -1,11 +1,11 @@
 package acme.testing.authenticated.provider;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class AuthenticatedProviderUpdateTest extends AcmePlannerTest {
+public class AuthenticatedProviderUpdateTest extends AcmeWorkPlansTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/authenticated/provider/positive-update.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)

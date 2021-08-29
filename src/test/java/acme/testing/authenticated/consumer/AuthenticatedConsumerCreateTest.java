@@ -1,12 +1,12 @@
 package acme.testing.authenticated.consumer;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 
-public class AuthenticatedConsumerCreateTest extends AcmePlannerTest {
+public class AuthenticatedConsumerCreateTest extends AcmeWorkPlansTest {
 	
 	// This test case check that the input boxes are empty, so the authenticated can't become consumer and system throws error.
     @ParameterizedTest

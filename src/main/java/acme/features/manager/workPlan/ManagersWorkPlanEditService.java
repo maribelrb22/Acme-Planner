@@ -110,8 +110,8 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 
 		
 		if(!workplan.getTasks().isEmpty()) {
-			Date recommendedInitialDate = repository.findInitialDateFirstTask(workplanId).get(0);
-			Date recommendedEndDate= repository.findEndDateLastTask(workplanId).get(0);
+			final Date recommendedInitialDate = this.repository.findInitialDateFirstTask(workplanId).get(0);
+			final Date recommendedEndDate= this.repository.findEndDateLastTask(workplanId).get(0);
 
 			//Add or substract one day in miliseconds
 			final Calendar cal1 = Calendar.getInstance();
@@ -126,8 +126,11 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 			
 			request.getModel().setAttribute("recommendedInitialDate", cal1.getTime().toString());
 			request.getModel().setAttribute("recommendedEndDate", cal2.getTime().toString());
+		}else {
+			final Task t = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList()).get(0);
+			request.getModel().setAttribute("recommendedInitialDate", t.getBegin());
 		}		
-		List<Task>taskList = repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
+		List<Task>taskList = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
 		if(workplan.getIsPublic().booleanValue())//If workplan is public, only public tasks can be added
 			taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
 		
@@ -142,7 +145,7 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 				"Managers.workplan.form.addTask.error.executionPeriod");
 
 
-	}catch(Exception e){
+	}catch(final Exception e){
 		errors.state(request, false, "begin", "Please, introduce a correct Date");
 		errors.state(request, false, "end", "Please, introduce a correct Date");
 	}

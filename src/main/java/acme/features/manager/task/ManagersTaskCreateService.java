@@ -1,5 +1,6 @@
 package acme.features.manager.task;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,8 +75,9 @@ public class ManagersTaskCreateService implements AbstractCreateService<Managers
 		
 		final boolean titleSpam = this.spam.isItSpam(entity.getTitle());
 		final boolean descripcionSpam = this.spam.isItSpam(entity.getDescription());
-		final int ent = (int) entity.getWorkload();
-		final double dec = entity.getWorkload() - ent;
+		final BigDecimal number = BigDecimal.valueOf(entity.getWorkload());
+		final long ent = number.longValue();
+		final BigDecimal dec = number.remainder(BigDecimal.ONE);
 		
 		if(!errors.hasErrors("begin") && !errors.hasErrors("end")) {
 			errors.state(request, end.after(begin), "begin", "Managers.task.form.error.must-be-before-end");
@@ -95,7 +97,8 @@ public class ManagersTaskCreateService implements AbstractCreateService<Managers
 			errors.state(request, periodo>=entity.getWorkload(), "workload", "Managers.task.form.error.must-be-less-than-work-period");
 			errors.state(request, periodo>=entity.getWorkload(), "workload", "("+periodo+")");
 		}
-			errors.state(request, 0.59>=dec, "workload", "Managers.task.form.error.decimal-must-be-under-60");
+			errors.state(request, BigDecimal.valueOf(0.59).compareTo(dec)>=0, "workload", "Managers.task.form.error.decimal-must-be-under-60");
+			errors.state(request, 99>=ent, "workload", "Managers.task.form.error.error-fecha");
 			errors.state(request, !titleSpam, "title", "Managers.task.form.error.spam");
 			errors.state(request, !descripcionSpam, "description", "Managers.task.form.error.spam");
 		

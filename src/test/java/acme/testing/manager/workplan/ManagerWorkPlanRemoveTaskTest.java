@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanRemoveTaskTest extends AcmePlannerTest{
+public class ManagerWorkPlanRemoveTaskTest extends AcmeWorkPlansTest{
 	
 	// Lifecycle management ---------------------------------------------------
 	
