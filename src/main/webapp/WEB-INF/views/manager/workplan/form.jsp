@@ -39,7 +39,7 @@
 		</button>
    	</jstl:if>
     <acme:form-submit test="${ItsMine && !isPublic && canPublish && (command=='show'|| command =='update' || errorsAdd)}" code="Managers.workplan.form.button.publish" action="/managers/work-plan/publish"/>
-    <acme:form-submit test="${isPublic && ItsMine}" code="Managers.workplan.form.button.privatize" action="/managers/work-plan/privatize"/>
+    <acme:form-submit test="${isPublic && ItsMine && (command=='show'|| command =='update' || errorsAdd)}" code="Managers.workplan.form.button.privatize" action="/managers/work-plan/privatize"/>
     <acme:form-submit test="${ItsMine && (command=='show' || command =='update' || errorsAdd)}" code="Managers.workplan.form.button.delete" action="/managers/work-plan/delete"/>
     <acme:form-submit test="${ItsMine && (command=='show'|| command =='update' || errorsAdd)}" code="Managers.workplan.form.button.update" action="/managers/work-plan/update"/>
     <acme:form-return code="Managers.workplan.form.button.return"/>

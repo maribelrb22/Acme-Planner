@@ -82,7 +82,8 @@ public class ManagersWorkPlanAddTaskService implements AbstractUpdateService<Man
 			if(Boolean.TRUE.equals(wp.getIsPublic())) 
 				errors.state(request, task!=null && Boolean.TRUE.equals(task.getIsPublic()), "taskSelected", "Managers.workplan.form.addTask.error.public");
 
-			errors.state(request, task!=null && task.getBegin().after(wp.getBegin()) && task.getEnd().before(wp.getEnd()) && wp.getExecutionPeriod() >= 
+			errors.state(request, task!=null && (task.getBegin().after(wp.getBegin()) || task.getBegin().equals(wp.getBegin())) 
+				&& (task.getEnd().before(wp.getEnd()) || task.getEnd().equals(wp.getEnd())) && wp.getExecutionPeriod() >= 
 				(ls.stream().mapToDouble(Task::getExecutionPeriod).sum() + task.getExecutionPeriod()), "taskSelected", 
 				"Managers.workplan.form.addTask.error.executionPeriod");
 			
