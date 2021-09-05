@@ -1,4 +1,4 @@
-dp2-2021-g1-01-Acme-Planner
+dp2-2021-g1-23-Acme-Work-Plans
 
 README.txt
 
@@ -17,4 +17,4 @@ projects.
 
 URL GitHub repository: https://github.com/maribelrb22/dp2-2021-g1-01-Acme-Planner.git
 </br>
-URL Deployed Application: http://app-2274a8ee-b840-4a64-a0e2-3c3f0ff4dde8.cleverapps.io/master/welcome
+URL GitHub release: https://github.com/maribelrb22/dp2-2021-g1-01-Acme-Planner/releases/tag/v3.0.1
