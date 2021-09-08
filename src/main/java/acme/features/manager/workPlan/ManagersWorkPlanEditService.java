@@ -2,6 +2,7 @@ package acme.features.manager.workPlan;
 
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -109,27 +110,44 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 		final Boolean canPublish= itsMine && workplan.getTasks().stream().filter(x-> x.getIsPublic().equals(false)).count() == 0 && !workplan.getIsPublic();
 
 		
-		if(!workplan.getTasks().isEmpty()) {
-			final Date recommendedInitialDate = this.repository.findInitialDateFirstTask(workplanId).get(0);
-			final Date recommendedEndDate= this.repository.findEndDateLastTask(workplanId).get(0);
+		try {
+			if (!workplan.getTasks().isEmpty()) {
+				final Date recommendedInitialDate = this.repository.findInitialDateFirstTask(workplanId).stream().filter(x -> x.after(new Date())).collect(Collectors.toList()).get(0);
+				final Date recommendedEndDate = this.repository.findEndDateLastTask(workplanId).stream().filter(x -> x.after(new Date())).collect(Collectors.toList()).get(0);
 
-			//Add or substract one day in miliseconds
-			final Calendar cal1 = Calendar.getInstance();
-            cal1.setTime(recommendedInitialDate);
-            cal1.add(Calendar.DAY_OF_MONTH, -1);
-            cal1.set(Calendar.HOUR, 8);
+				//Add or substract one day in miliseconds
+				final Calendar cal1 = Calendar.getInstance();
+				cal1.setTime(recommendedInitialDate);
+				cal1.add(Calendar.DAY_OF_MONTH, -1);
+				cal1.set(Calendar.HOUR, 8);
 
-            final Calendar cal2 = Calendar.getInstance();
-            cal2.setTime(recommendedEndDate);
-            cal2.add(Calendar.DAY_OF_MONTH, +1);
-            cal2.set(Calendar.HOUR, 17);
-			
-			request.getModel().setAttribute("recommendedInitialDate", cal1.getTime().toString());
-			request.getModel().setAttribute("recommendedEndDate", cal2.getTime().toString());
-		}else {
-			final Task t = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList()).get(0);
-			request.getModel().setAttribute("recommendedInitialDate", t.getBegin());
-		}		
+				final Calendar cal2 = Calendar.getInstance();
+				cal2.setTime(recommendedEndDate);
+				cal2.add(Calendar.DAY_OF_MONTH, +1);
+				cal2.set(Calendar.HOUR, 17);
+
+				if (cal1.getTime().before(Calendar.getInstance().getTime())) {
+					cal1.setTime(recommendedInitialDate);
+				}
+
+				request.getModel().setAttribute("recommendedInitialDate", cal1.getTime().toString());
+				request.getModel().setAttribute("recommendedEndDate", cal2.getTime().toString());
+			} else {
+				final Task t = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x -> !workplan.getTasks().contains(x) && x.getBegin().after(new Date())).sorted(Comparator.comparing(Task::getBegin))
+					.collect(Collectors.toList()).get(0);
+
+				final Calendar cal = Calendar.getInstance();
+				cal.setTime(t.getBegin());
+
+				request.getModel().setAttribute("recommendedInitialDate", cal.getTime().toString());
+			}
+		} catch (final Exception e) {
+			final Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.DAY_OF_MONTH, +1);
+
+			request.getModel().setAttribute("recommendedInitialDate", cal.getTime().toString());
+		}
+		
 		List<Task>taskList = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
 		if(workplan.getIsPublic().booleanValue())//If workplan is public, only public tasks can be added
 			taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
