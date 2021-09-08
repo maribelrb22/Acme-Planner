@@ -17,4 +17,4 @@ projects.
 
 URL GitHub repository: https://github.com/maribelrb22/dp2-2021-g1-01-Acme-Planner.git
 </br>
-URL GitHub release: https://github.com/maribelrb22/dp2-2021-g1-01-Acme-Planner/releases/tag/v3.0.1
+URL GitHub release: https://github.com/maribelrb22/dp2-2021-g1-01-Acme-Planner/releases/tag/v3.0.2
