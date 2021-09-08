@@ -109,7 +109,30 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 		final Boolean itsMine = managers.getUserAccount().getId() == principal.getAccountId();
 		final Boolean canPublish= itsMine && workplan.getTasks().stream().filter(x-> x.getIsPublic().equals(false)).count() == 0 && !workplan.getIsPublic();
 
+		this.recommendation(request, workplanId, workplan, managers);
 		
+		List<Task>taskList = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
+		if(workplan.getIsPublic().booleanValue())//If workplan is public, only public tasks can be added
+			taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
+		
+		request.getModel().setAttribute("ItsMine", itsMine);
+		request.getModel().setAttribute("canPublish", canPublish);
+		request.getModel().setAttribute("tasks", workplan.getTasks());
+		request.getModel().setAttribute("tasksEneabled", taskList);
+
+		final Collection<Task> ls = workplan.getTasks();
+		errors.state(request, ((end.getTime() - begin.getTime()) / (1000 * 3600))
+						>= (ls.stream().mapToDouble(Task::getExecutionPeriod).sum()), "executionPeriod",
+				"Managers.workplan.form.addTask.error.executionPeriod");
+
+
+	}catch(final Exception e){
+		errors.state(request, false, "begin", "Please, introduce a correct Date");
+		errors.state(request, false, "end", "Please, introduce a correct Date");
+	}
+	}
+	
+	private void recommendation(final Request<WorkPlan> request, final int workplanId, final WorkPlan workplan, final Managers managers) {
 		try {
 			if (!workplan.getTasks().isEmpty()) {
 				final Date recommendedInitialDate = this.repository.findInitialDateFirstTask(workplanId).stream().filter(x -> x.after(new Date())).collect(Collectors.toList()).get(0);
@@ -147,26 +170,6 @@ public class ManagersWorkPlanEditService implements AbstractUpdateService<Manage
 
 			request.getModel().setAttribute("recommendedInitialDate", cal.getTime().toString());
 		}
-		
-		List<Task>taskList = this.repository.findTasksAvailable(managers.getId(), workplanId).stream().filter(x->!workplan.getTasks().contains(x)).collect(Collectors.toList());//cambiar publicas por todas
-		if(workplan.getIsPublic().booleanValue())//If workplan is public, only public tasks can be added
-			taskList= taskList.stream().filter(Task::getIsPublic).collect(Collectors.toList());
-		
-		request.getModel().setAttribute("ItsMine", itsMine);
-		request.getModel().setAttribute("canPublish", canPublish);
-		request.getModel().setAttribute("tasks", workplan.getTasks());
-		request.getModel().setAttribute("tasksEneabled", taskList);
-
-		final Collection<Task> ls = workplan.getTasks();
-		errors.state(request, ((end.getTime() - begin.getTime()) / (1000 * 3600))
-						>= (ls.stream().mapToDouble(Task::getExecutionPeriod).sum()), "executionPeriod",
-				"Managers.workplan.form.addTask.error.executionPeriod");
-
-
-	}catch(final Exception e){
-		errors.state(request, false, "begin", "Please, introduce a correct Date");
-		errors.state(request, false, "end", "Please, introduce a correct Date");
-	}
 	}
 
 	@Override
